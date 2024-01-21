@@ -107,6 +107,7 @@ wechat_qr: assets/img/wechat-zz.jpg # filename of your wechat qr-code saved as a
 contact_note: >
   If any questions, please contact me, communications improve us.
 
+
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
 # -----------------------------------------------------------------------------
