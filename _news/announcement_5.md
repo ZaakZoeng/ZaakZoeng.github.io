@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Contributed to a project that was published in Nature!!!
+title: Contributed to a project that was published in Nature !!!
 date: 2024-04-10 00:00:00-0400
 inline: false
 related_posts: false
