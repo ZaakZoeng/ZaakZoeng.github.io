@@ -6,5 +6,3 @@ related_posts: false
 ---
 
 Successfully transitioned from a master's program to a doctoral program. :sparkles:
-
-http://hias.ucas.ac.cn/life/info/1450/1762.htm
