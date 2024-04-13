@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-My first paper has been published online. :sparkles:
+My first paper has been published online. ✨
