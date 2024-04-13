@@ -9,3 +9,5 @@ categories: sample-posts
 
 I find a nice Emoji library!
 <a href="https://getemoji.com/" target="_blank">Emoji Library</a>
+
+It is useful!
