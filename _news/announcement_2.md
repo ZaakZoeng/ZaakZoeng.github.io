@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Graduated with a bachelor's degree from Nanchang University. 🎓 :graduation:
+Graduated with a bachelor's degree from Nanchang University. 🎓🎓🎓

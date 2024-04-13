@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Successfully transitioned from a master's program to a doctoral program. :sparkles:
+Successfully transitioned from a master's program to a doctoral program. 😊

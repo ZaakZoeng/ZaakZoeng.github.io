@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Successfully passed the graduate entrance examination. :smile:
+Successfully passed the graduate entrance examination. 😊
