@@ -1,6 +1,6 @@
 ---
 layout: post
-title: a post with README
+title: I find a funny emoji library
 date: 2024-04-13 22:47:00
 description: A funny emoji library
 tags: formatting
