@@ -88,7 +88,7 @@ osf_id: # your OSF ID
 research_gate_profile: # your profile on ResearchGate
 scopus_id: # your profile on Scopus
 blogger_url: https://www.yuque.com/parallellight/biometa/zhangze # your blogger URL
-work_url: https://www.yuque.com/parallellight/biometa/zhangze # work page URL
+work_url: https://chenlab.biometa.top/ # work page URL
 keybase_username: # your keybase user name
 wikidata_id: # your wikidata id
 wikipedia_id: # your wikipedia id (Case sensitive)
@@ -186,7 +186,7 @@ announcements:
   limit: 5  # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
+  enabled: false
   scrollable: false # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 0 # leave blank to include all the blog posts
 
