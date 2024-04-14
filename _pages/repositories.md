@@ -3,7 +3,7 @@ layout: page
 permalink: /repositories/
 title: Repositories
 description: Ze Zhang's GitHub profile and repositories.
-nav: true
+nav: false
 nav_order: 4
 # layout: page
 # permalink: /repositories/
