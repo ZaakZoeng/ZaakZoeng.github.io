@@ -1,6 +1,6 @@
 ---
 layout: post
-title: a post with zzzz
+title: a post with zzzzzzzzz
 date: 2023-12-12 23:25:00
 description: this is what included TikZ code could look like
 tags: formatting diagrams
