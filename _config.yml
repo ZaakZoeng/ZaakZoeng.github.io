@@ -13,7 +13,8 @@ footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-keywords: Data Science, Bioinformatics, Databases tools  # add your own keywords or leave empty
+keywords: # add your own keywords or leave empty
+# keywords: Data Science, Bioinformatics, Databases tools  # add your own keywords or leave empty
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 # icon: ⚛️  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
@@ -22,7 +23,7 @@ icon: /assets/img/favicon.png  # the emoji used as the favicon (alternatively, p
 url: https://ZaakZoeng.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/
 # baseurl: /al-folio # the subpath of your site, e.g. /blog/. Leave blank for root
-last_updated: false # set to true if you want to display last updated in the footer
+last_updated: true # set to true if you want to display last updated in the footer
 impressum_path:  # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 # -----------------------------------------------------------------------------
 # Theme
@@ -86,7 +87,7 @@ lattes_id: # your ID on Lattes (Brazilian Lattes CV)
 osf_id: # your OSF ID
 research_gate_profile: # your profile on ResearchGate
 scopus_id: # your profile on Scopus
-blogger_url: # your blogger URL
+blogger_url: https://www.yuque.com/parallellight/biometa/zhangze # your blogger URL
 work_url: https://www.yuque.com/parallellight/biometa/zhangze # work page URL
 keybase_username: # your keybase user name
 wikidata_id: # your wikidata id
@@ -182,7 +183,7 @@ collections:
 announcements:
   enabled: true
   scrollable: false # adds a vertical scroll bar if there are more than 3 news items
-  limit:   # leave blank to include all the news in the `_news` folder
+  limit: 2  # leave blank to include all the news in the `_news` folder
 
 latest_posts:
   enabled: false
