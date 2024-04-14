@@ -1,18 +1,19 @@
-"Ze Zhang":
+"Zhang":
   - firstname: ["Ze", "Z Zhang", "Z. Z", "Ze Zhang"]
     url: https://scholar.google.com/citations?user=-I-kmaoAAAAJ
 
-"Xiaoping Liu":
-  - firstname: ["XP Liu", "Xiaoping Liu"]
-    url: https://scholar.google.com/citations?user=_yiMcX8AAAAJ
+# "Xiaoping Liu":
+#   - firstname: ["XP Liu", "Xiaoping Liu"]
+#     url: https://scholar.google.com/citations?user=_yiMcX8AAAAJ
 
-"Luonan Chen":
-  - firstname: ["LN Chen", "Luonan Chen"]
-    url: https://scholar.google.com/citations?user=Uoqv8rkAAAAJ
+# "Luonan Chen":
+#   - firstname: ["LN Chen", "Luonan Chen"]
+#     url: https://scholar.google.com/citations?user=Uoqv8rkAAAAJ
 
-"Rui Liu": 
-  - firstname: ["R Liu", "Rui Liu"]
-    url: https://scholar.google.com/citations?user=1st_xPkAAAAJ
+# "Rui Liu": 
+#   - firstname: ["R Liu", "Rui Liu"]
+#     url: https://scholar.google.com/citations?user=1st_xPkAAAAJ
+
 # "adams":
 #   - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
 #     url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
