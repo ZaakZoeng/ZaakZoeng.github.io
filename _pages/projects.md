@@ -5,7 +5,7 @@ permalink: /projects/
 description: A growing collection of Ze Zhang's cool projects.
 nav: true
 nav_order: 2
-display_categories: [work, fun]
+display_categories: [work, fun, poster, meeting]
 horizontal: false
 # layout: page
 # title: projects
