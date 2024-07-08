@@ -4,7 +4,7 @@ title: ChenLab
 description: Computational Systems Biology Lab
 img: assets/img/project_fun_2024_chenlab.jpg
 importance: 1
-category: poster
+category: meeting
 ---
 
 Welcome to ChenLab: <a href="http://chenlab.biometa.top/" target="_blank">Computational Systems Biology Lab</a>
