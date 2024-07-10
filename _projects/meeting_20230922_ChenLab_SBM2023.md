@@ -19,6 +19,6 @@ The 3rd National Meeting on Systems Biology in 2023!
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects_preview/meeting/project_meeting_20230922.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/projects_preview/meeting/project_meeting_20230922_SBM2023.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
