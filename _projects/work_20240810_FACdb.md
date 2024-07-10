@@ -2,7 +2,7 @@
 layout: page
 title: FACdb
 description: Farm Animal Connectome database
-img: assets/img/project_work_2024_facdb.jpg
+img: assets/img/projects_preview/work/project_work_2024_facdb.jpg
 importance: 1
 category: work
 related_publications: 

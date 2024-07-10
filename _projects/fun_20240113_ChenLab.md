@@ -2,7 +2,7 @@
 layout: page
 title: ChenLab
 description: Computational Systems Biology Lab
-img: assets/img/project_fun_2024_chenlab.jpg
+img: assets/img/projects_preview/fun/project_fun_2024_chenlab.jpg
 importance: 1
 category: fun
 ---
