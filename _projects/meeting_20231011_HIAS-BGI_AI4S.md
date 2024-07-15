@@ -1,6 +1,6 @@
 ---
 layout: page
-title: BGI-AI4S
+title: HIAS-BGI AI4S(2023)
 description: 杭高院-华大学术研讨交流会
 img: assets/img/projects_preview/meeting/project_meeting_20231011_AI4S.jpg
 importance: 1

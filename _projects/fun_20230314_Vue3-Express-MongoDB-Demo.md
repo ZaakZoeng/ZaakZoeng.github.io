@@ -2,7 +2,7 @@
 layout: page
 title: Vue3-Express-MongoDB-Demo
 description: a demo project with Vue3-Express-MongoDB
-img: assets/img/4.jpg
+img: assets/img/projects_preview/fun/project_fun_2023_demo.jpg
 importance: 4
 category: fun
 ---
