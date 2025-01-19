@@ -14,9 +14,9 @@ horizontal: false
   <!-- Sports -->
   <h2 class="category">Sports</h2>
   <div class="container">
+    <div>My sports</div>
     <div class="row row-cols-2">
-      <div>My movies</div>
-      <div id="chart-container" style="width: 100%; height: 500px;"></div>
+      <div id="echart-sports" style="width: 100%; height: 500px;"></div>
     </div>
   </div>
   <div class="grid"></div>
@@ -24,18 +24,18 @@ horizontal: false
   <!-- Movies -->
   <h2 class="category">Movies</h2>
   <div class="container">
+    <div>My movies</div>
     <div class="row row-cols-2">
-      <div>My movies</div>
-      <div id="chart-container" style="width: 100%; height: 500px;"></div>
+      <div id="echart-movies" style="width: 100%; height: 500px;"></div>
   </div>
   <div class="grid"></div>
 
   <!-- Travels -->
   <h2 class="category">Travels</h2>
   <div class="container">
+    <div>My Travels</div>
     <div class="row row-cols-2">
-      <div>My movies</div>
-      <div id="chart-container" style="width: 100%; height: 500px;"></div>
+      <div id="echart-travels" style="width: 100%; height: 500px;"></div>
     </div>
   </div>
   <div class="grid"></div>
@@ -46,10 +46,10 @@ horizontal: false
 
 <script>
   // 基于准备好的dom，初始化echarts实例
-  var chart = echarts.init(document.getElementById('chart-container'));
+  var chartMovies = echarts.init(document.getElementById('echart-movies'));
 
   // 配置图表
-  var option = {
+  var optionMovies = {
     title: {
       text: '小泽2024年度的每月观影次数情况统计图',
       left: 'center',
@@ -93,5 +93,5 @@ horizontal: false
   };
 
   // 使用指定的配置项和数据显示图表
-  chart.setOption(option);
+  chartMovies.setOption(optionMovies);
 </script>
