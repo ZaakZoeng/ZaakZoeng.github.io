@@ -37,7 +37,7 @@ horizontal: false
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.3.0/echarts.min.js"></script>
 
 <script>
-  var chartMovies = echarts.init(document.getElementById('echart-sports'));
+  var chartSports = echarts.init(document.getElementById('echart-sports'));
 
   var dataMap = {};
   function dataFormatter(obj) {
