@@ -25,10 +25,9 @@ horizontal: false
   <div class="container">
     <div class="row row-cols-2">
     观影情况
-    <iframe src="assets/html/2024-movies-monthly-dark.html" width="100%" height="500px" frameborder="0">
-      <!-- 如果浏览器不支持 iframe，会显示以下内容 -->
-      <p>Your browser does not support iframes.</p>
-    </iframe>
+    <div class="my-container">
+      <h2>{{ page.title }}</h2>
+      {% include 2024-movies-monthly-dark.html %}
     </div>
   </div>
   <div class="grid"></div>
