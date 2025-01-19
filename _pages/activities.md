@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Digital Center
-permalink: /digital/
+title: Activities
+permalink: /activities/
 description: The digital center of Ze Zhang's activities.
 nav: true
 nav_order: 3
@@ -11,20 +11,19 @@ horizontal: false
 
 <!-- pages/projects.md -->
 <div class="projects">
-<!-- {% if site.enable_project_categories and page.display_categories %} -->
+{% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->
-  <!-- {% for category in page.display_categories %} -->
-  <h2 class="category">sports</h2>
-  <!-- {% assign categorized_projects = site.projects | where: "category", category %} -->
-  <!-- {% assign sorted_projects = categorized_projects | sort: "importance" %} -->
+  {% for category in page.display_categories %}
+  <h2 class="category">{{ category }}</h2>
+  {% assign categorized_projects = site.projects | where: "category", category %}
+  {% assign sorted_projects = categorized_projects | sort: "importance" %}
   <!-- Generate cards for each project -->
-  <!-- {% if page.horizontal %} -->
+  {% if page.horizontal %}
   <div class="container">
     <div class="row row-cols-2">
-    <div>sportssssssssssssssfjladkkddkakdjfkddkdk11235151</div>
-    <!-- {% for project in sorted_projects %}
+    {% for project in sorted_projects %}
       {% include projects_horizontal.liquid %}
-    {% endfor %} -->
+    {% endfor %}
     </div>
   </div>
   {% else %}
