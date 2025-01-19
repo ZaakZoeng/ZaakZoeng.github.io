@@ -10,6 +10,18 @@ html_movies: assets/html/movies.html
 horizontal: false
 ---
 
+<div class="projects">
+  <h2 class="category">Interactive Chart Example</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <!-- 使用 include 标签嵌入图表 -->
+        {% include echart-chart.html %}
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- pages/projects.md -->
 <div class="projects">
   <!-- Sports -->
@@ -25,10 +37,10 @@ horizontal: false
   <h2 class="category">Movies</h2>
   <div class="container">
     <div class="row row-cols-2">
-    观影情况
     <div class="my-container">
       <h2>{{ page.title }}</h2>
-      {% include my-container.html %}
+      <!-- 使用 include 标签嵌入图表 -->
+      {% include echart-chart.html %}
     </div>
     <!-- guanying -->
     <iframe src="{{ page.html_movies | relative_url }}" width="100%" height="500px" frameborder="0">
