@@ -36,6 +36,9 @@ horizontal: false
 <!-- 引入 ECharts 库 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.3.0/echarts.min.js"></script>
 
+<!-- 引入 百度地图AK -->
+<script src="https://api.map.baidu.com/api?v=3.0&ak=Xdp40nHl9e5tLwMiDoqhv8HbB4Z2sErJ"></script>
+
 <!-- Sports -->
 <script>
   var chartSports = echarts.init(document.getElementById('echart-sports'));
@@ -549,12 +552,118 @@ horizontal: false
 <script>
   var chartTravels = echarts.init(document.getElementById('echart-travels'));
 
+  var dataTravels = [
+    { name: '邢台宁晋县', value: 31 },
+    { name: '石家庄', value: 24 },
+    { name: '衡水', value: 2 },
+    { name: '淄博', value: 3 },
+    { name: '辛集', value: 2 },
+    { name: '南昌', value: 54 },
+    { name: '长沙', value: 2 },
+    { name: '天津', value: 1 },
+    { name: '武汉', value: 3 },
+    { name: '深圳', value: 63 },
+    { name: '杭州', value: 63 },
+    { name: '余姚', value: 2 },
+    { name: '香港', value: 7 },
+    { name: '广州', value: 2 },
+    { name: '上海', value: 2 },
+    { name: '舟山', value: 1 },
+    { name: '北京', value: 12 },
+    { name: '廊坊', value: 3 },
+    { name: '诸暨', value: 2 },
+    { name: '绍兴', value: 4 },
+    { name: '南京', value: 1 },
+    { name: '泰安', value: 3 },
+    { name: '青岛', value: 4 },
+    { name: '千岛湖', value: 3 },
+    { name: '海口', value: 5 },
+    { name: '文昌', value: 1 },
+    { name: '琼海博鳌', value: 2 },
+    { name: '澳门', value: 4 },
+    { name: '珠海', value: 2 },
+    { name: '丰城', value: 2 }
+  ];
+  var geoCoordMap = {
+    邢台宁晋县: [114.48, 37.05],
+    石家庄: [114.48, 38.03],
+    衡水: [115.72, 37.52],
+    淄博: [118.05, 36.81],
+    辛集: [115.22, 37.94],
+    南昌: [115.89, 28.68],
+    长沙: [112.93, 28.23],
+    天津: [117.20, 39.12],
+    武汉: [114.30, 30.59],
+    深圳: [114.07, 22.62],
+    杭州: [120.19, 30.26],
+    余姚: [121.56, 29.86],
+    香港: [114.17, 22.32],
+    广州: [113.23, 23.16],
+    上海: [121.48, 31.22],
+    舟山: [122.20, 29.98],
+    北京: [116.46, 39.92],
+    廊坊: [116.70, 39.53],
+    诸暨: [120.23, 29.71],
+    绍兴: [120.58, 30.01],
+    南京: [118.78, 32.04],
+    泰安: [117.13, 36.18],
+    青岛: [120.33, 36.07],
+    千岛湖: [119.04, 29.61],
+    海口: [110.20, 20.04],
+    文昌: [110.80, 19.54],
+    琼海博鳌: [110.58, 19.16],
+    澳门: [113.54, 22.19],
+    珠海: [113.57, 22.27],
+    丰城: [115.78, 28.19],
+  };
+  var convertData = function (data) {
+    var res = [];
+    for (var i = 0; i < data.length; i++) {
+      var geoCoord = geoCoordMap[data[i].name];
+      if (geoCoord) {
+        res.push({
+          name: data[i].name,
+          value: geoCoord.concat(data[i].value)
+        });
+      }
+    }
+    return res;
+  };
+  function renderItem(params, api) {
+    var coords = [
+      [116.46, 39.92],  // 北京
+      [120.33, 36.07],  // 青岛
+      [122.20, 29.98],  // 舟山
+      [114.17, 22.32],  // 香港
+      [110.58, 19.16],  // 琼海博鳌
+      [110.20, 20.04],  // 海口
+      // [113.23, 23.16],  // 广州
+      [114.48, 38.03],  // 石家庄
+    ];
+    var points = [];
+    for (var i = 0; i < coords.length; i++) {
+      points.push(api.coord(coords[i]));
+    }
+    var color = api.visual('color');
+    return {
+      type: 'polygon',
+      shape: {
+        points: echarts.graphic.clipPointsByRect(points, {
+          x: params.coordSys.x,
+          y: params.coordSys.y,
+          width: params.coordSys.width,
+          height: params.coordSys.height
+        })
+      },
+      style: api.style({
+        fill: color,
+        stroke: echarts.color.lift(color)
+      })
+    };
+  };
+  
   var optionTravels = {
-    title: {
-      text: '小泽2024年度的每月观影次数情况统计图',
-      left: 'center',
-    },
-    toolbox: {
+      toolbox: {
       feature: {
         dataView: { show: true, readOnly: false },
         magicType: { show: true, type: ['line', 'bar'] },
@@ -562,32 +671,228 @@ horizontal: false
         saveAsImage: { show: true }
       }
     },
-    xAxis: {
-      type: 'category',
-      data: ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May.', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.']
+    backgroundColor: 'transparent',
+    title: {
+      text: '小泽的城市点亮地图',
+      // subtext: 'data from PM25.in',
+      // sublink: 'http://www.pm25.in',
+      left: 'center',
+      textStyle: {
+        color: '#fff'
+      }
     },
-    yAxis: {
-      type: 'value'
+    tooltip: {
+      trigger: 'item'
+    },
+    bmap: {
+      center: [104.114129, 32.550339],
+      zoom: 5,
+      roam: true,
+      mapStyle: {
+        styleJson: [
+          {
+            featureType: 'water',
+            elementType: 'all',
+            stylers: {
+              color: '#044161'
+            }
+          },
+          {
+            featureType: 'land',
+            elementType: 'all',
+            stylers: {
+              color: '#004981'
+            }
+          },
+          {
+            featureType: 'boundary',
+            elementType: 'geometry',
+            stylers: {
+              color: '#064f85'
+            }
+          },
+          {
+            featureType: 'railway',
+            elementType: 'all',
+            stylers: {
+              visibility: 'off'
+            }
+          },
+          {
+            featureType: 'highway',
+            elementType: 'geometry',
+            stylers: {
+              color: '#004981'
+            }
+          },
+          {
+            featureType: 'highway',
+            elementType: 'geometry.fill',
+            stylers: {
+              color: '#005b96',
+              lightness: 1
+            }
+          },
+          {
+            featureType: 'highway',
+            elementType: 'labels',
+            stylers: {
+              visibility: 'off'
+            }
+          },
+          {
+            featureType: 'arterial',
+            elementType: 'geometry',
+            stylers: {
+              color: '#004981'
+            }
+          },
+          {
+            featureType: 'arterial',
+            elementType: 'geometry.fill',
+            stylers: {
+              color: '#00508b'
+            }
+          },
+          {
+            featureType: 'poi',
+            elementType: 'all',
+            stylers: {
+              visibility: 'off'
+            }
+          },
+          {
+            featureType: 'green',
+            elementType: 'all',
+            stylers: {
+              color: '#056197',
+              visibility: 'off'
+            }
+          },
+          {
+            featureType: 'subway',
+            elementType: 'all',
+            stylers: {
+              visibility: 'off'
+            }
+          },
+          {
+            featureType: 'manmade',
+            elementType: 'all',
+            stylers: {
+              visibility: 'off'
+            }
+          },
+          {
+            featureType: 'local',
+            elementType: 'all',
+            stylers: {
+              visibility: 'off'
+            }
+          },
+          {
+            featureType: 'arterial',
+            elementType: 'labels',
+            stylers: {
+              visibility: 'off'
+            }
+          },
+          {
+            featureType: 'boundary',
+            elementType: 'geometry.fill',
+            stylers: {
+              color: '#029fd4'
+            }
+          },
+          {
+            featureType: 'building',
+            elementType: 'all',
+            stylers: {
+              color: '#1a5787'
+            }
+          },
+          {
+            featureType: 'label',
+            elementType: 'all',
+            stylers: {
+              visibility: 'off'
+            }
+          }
+        ]
+      }
     },
     series: [
       {
-        data: [0, 1, 0, 0, 2, 1, 0, 2, 2, 2, 1, 2],
-        type: 'line',
-        symbol: 'triangle',
-        label: {
-          show: true
+        // name: 'pm2.5',
+        type: 'scatter',
+        coordinateSystem: 'bmap',
+        data: convertData(dataTravels),
+        encode: {
+          value: 2
         },
-        symbolSize: 20,
-        lineStyle: {
-          color: '#5470C6',
-          width: 4,
-          type: 'dashed'
+        symbolSize: function (val) {
+          // return val[2] / 2;
+          return 8
+        },
+        label: {
+          formatter: '{b}',
+          position: 'right'
         },
         itemStyle: {
-          borderWidth: 3,
-          borderColor: '#EE6666',
-          color: 'yellow'
+          color: '#ddb926'
+        },
+        emphasis: {
+          label: {
+            show: true
+          }
         }
+      },
+      {
+        // name: 'Top 5',
+        name: 'Times',
+        type: 'effectScatter',
+        coordinateSystem: 'bmap',
+        data: convertData(
+          dataTravels
+            .sort(function (a, b) {
+              return b.value - a.value;
+            })
+            // .slice(0, 6)
+        ),
+        encode: {
+          value: 2
+        },
+        symbolSize: function (val) {
+          return val[2] / 3;
+        },
+        showEffectOn: 'emphasis',
+        rippleEffect: {
+          brushType: 'stroke'
+        },
+        hoverAnimation: true,
+        label: {
+          formatter: '{b}',
+          position: 'right',
+          show: true
+        },
+        itemStyle: {
+          color: '#f4e925',
+          shadowBlur: 10,
+          shadowColor: '#333'
+        },
+        zlevel: 1
+      },
+      {
+        type: 'custom',
+        coordinateSystem: 'bmap',
+        renderItem: renderItem,
+        itemStyle: {
+          opacity: 0.5
+        },
+        animation: false,
+        silent: true,
+        data: [0],
+        z: -10
       }
     ]
   };
