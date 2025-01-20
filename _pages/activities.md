@@ -169,6 +169,7 @@ horizontal: false
     { name: "好东西", type: "电影票", date: "2024-11-30", location: "杭州", members: ["媛媛"] },
     { name: "误杀3", type: "电影票", date: "2024-12-28", location: "深圳", members: ["媛媛"] },
     { name: "破·地狱", type: "电影票", date: "2024-12-29", location: "深圳", members: ["媛媛"] }
+    { name: '"骗骗"喜欢你', type: "电影票", date: "2025-01-11", location: "深圳", members: ["媛媛"] }
   ];
 
   // 统计函数
@@ -927,11 +928,6 @@ horizontal: false
   };
 
   chartTravels.setOption(optionTravels);
-
-  window.onresize = function () {
-    chartTravels.resize();
-  };
-  
   // 获取百度地图实例
   var bmap = chartTravels.getModel().getComponent('bmap').getBMap();
   // 你可以调整地图初始化时的缩放和位置设置
@@ -939,5 +935,10 @@ horizontal: false
   setTimeout(function() {
     bmap.addControl(new BMap.MapTypeControl());
     bmap.addControl(new BMap.NavigationControl());
-  }, 500); // 延迟加载控件
+  }, 50); // 延迟加载控件
+  chartTravels.resize();
+
+  window.onresize = function () {
+    chartTravels.resize();
+  };
 </script>
