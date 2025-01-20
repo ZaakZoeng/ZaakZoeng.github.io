@@ -252,8 +252,8 @@ horizontal: false
         const details = params[0].data.details; // 当前月份的票据详情
 
         let tooltipText = `${month}<br>`;
-        tooltipText += `电影票: ${moviesCount} 次<br>`;
-        tooltipText += `其他票据: ${othersCount} 次<br>`;
+        tooltipText += `🎦 电影票: ${moviesCount} 次<br>`;
+        tooltipText += `🎫 其他票据: ${othersCount} 次<br>`;
         tooltipText += `<br>`;
 
         details.forEach(item => {
@@ -289,6 +289,7 @@ horizontal: false
     },
     toolbox: {
       right: '0',
+      orient: 'vertical',
       feature: {
         dataView: { show: true, readOnly: false },
         magicType: { show: true, type: ['line', 'bar'] },
@@ -326,7 +327,14 @@ horizontal: false
         data: movies.map((value, index) => ({
           value,
           details: details[index] // 将 details 绑定到每个数据点
-        }))
+        })),
+        symbol: 'square',
+        symbolSize: 6,
+        lineStyle: {
+          // color: '#5470C6',
+          width: 3,
+          // type: 'dashed'
+        }
       },
       {
         name: '🎫 Others',
@@ -335,12 +343,23 @@ horizontal: false
         data: others.map((value, index) => ({
           value,
           details: details[index] // 将 details 绑定到每个数据点
-        }))
+        })),
+        symbol: 'circle',
+        symbolSize: 6,
+        lineStyle: {
+          // color: '#5470C6',
+          width: 3,
+          type: 'dashed'
+        },
       }
     ]
   };
 
   chartTickets.setOption(optionTickets);
+
+  window.onresize = function () {
+    chartTickets.resize();
+  };
 </script>
 
 <!-- Sports -->
@@ -422,6 +441,7 @@ horizontal: false
         }
       },
       title: {
+        left: 'center',
         subtext: 'Data from Ze Zhang'
       },
       tooltip: {
@@ -435,7 +455,7 @@ horizontal: false
       },
       toolbox: {
         right: '0',
-        bottom: '0',
+        orient: 'vertical',
         feature: {
           dataView: { show: true, readOnly: false },
           magicType: { show: true, type: ['line', 'bar'] },
@@ -444,12 +464,13 @@ horizontal: false
         }
       },
       legend: {
-        left: 'right',
+        left: 'center',
+        top: 60,
         data: ['Basketball 🏀', 'Swimming 🏊', 'Fit 💪', 'Badminton 🏸'],
       },
       calculable: true,
       grid: {
-        top: 120,
+        top: 200,
         bottom: 80,
         tooltip: {
           trigger: 'axis',
@@ -487,7 +508,7 @@ horizontal: false
         {
           name: 'Sports totaling proportion',
           type: 'pie',
-          center: ['75%', '25%'],
+          center: ['75%', '35%'],
           radius: '28%',
           z: 100
         }
@@ -549,6 +570,10 @@ horizontal: false
   };
 
   chartSports.setOption(optionSports);
+
+  window.onresize = function () {
+    chartSports.resize();
+  };
 </script>
 
 <!-- Travels -->
@@ -630,47 +655,47 @@ horizontal: false
         });
       }
     }
-    console.log(res);
     return res;
   };
-  // function renderItem(params, api) {
-  //   var coords = [
-  //     [116.46, 39.92],  // 北京
-  //     [120.33, 36.07],  // 青岛
-  //     [122.20, 29.98],  // 舟山
-  //     [114.17, 22.32],  // 香港
-  //     [110.58, 19.16],  // 琼海博鳌
-  //     [110.20, 20.04],  // 海口
-  //     // [113.23, 23.16],  // 广州
-  //     [114.48, 38.03],  // 石家庄
-  //   ];
-  //   var points = [];
-  //   for (var i = 0; i < coords.length; i++) {
-  //     points.push(api.coord(coords[i]));
-  //   }
-  //   var color = api.visual('color');
-  //   return {
-  //     type: 'polygon',
-  //     shape: {
-  //       points: echarts.graphic.clipPointsByRect(points, {
-  //         x: params.coordSys.x,
-  //         y: params.coordSys.y,
-  //         width: params.coordSys.width,
-  //         height: params.coordSys.height
-  //       })
-  //     },
-  //     style: api.style({
-  //       fill: color,
-  //       stroke: echarts.color.lift(color)
-  //     })
-  //   };
-  // };
-
+  function renderItem(params, api) {
+    var coords = [
+      [116.46, 39.92],  // 北京
+      [120.33, 36.07],  // 青岛
+      [122.20, 29.98],  // 舟山
+      [114.17, 22.32],  // 香港
+      [110.58, 19.16],  // 琼海博鳌
+      [110.20, 20.04],  // 海口
+      // [113.23, 23.16],  // 广州
+      [114.48, 38.03],  // 石家庄
+    ];
+    var points = [];
+    for (var i = 0; i < coords.length; i++) {
+      points.push(api.coord(coords[i]));
+    }
+    var color = api.visual('color');
+    return {
+      type: 'polygon',
+      shape: {
+        points: echarts.graphic.clipPointsByRect(points, {
+          x: params.coordSys.x,
+          y: params.coordSys.y,
+          width: params.coordSys.width,
+          height: params.coordSys.height
+        })
+      },
+      style: api.style({
+        fill: color,
+        stroke: echarts.color.lift(color)
+      })
+    };
+  }
   var optionTravels = {
-      toolbox: {
+    toolbox: {
+      right: '0',
+      orient: 'vertical',
       feature: {
         dataView: { show: true, readOnly: false },
-        magicType: { show: true, type: ['line', 'bar'] },
+        // magicType: { show: true, type: ['line', 'bar'] },
         restore: { show: true },
         saveAsImage: { show: true }
       }
@@ -885,18 +910,18 @@ horizontal: false
           shadowColor: '#333'
         },
         zlevel: 1
-      // },
-      // {
-      //   type: 'custom',
-      //   coordinateSystem: 'bmap',
-      //   renderItem: renderItem,
-      //   itemStyle: {
-      //     opacity: 0.5
-      //   },
-      //   animation: false,
-      //   silent: true,
-      //   data: [0],
-      //   z: -10
+      },
+      {
+        type: 'custom',
+        coordinateSystem: 'bmap',
+        renderItem: renderItem,
+        itemStyle: {
+          opacity: 0.5
+        },
+        animation: false,
+        silent: true,
+        data: [0],
+        z: -10
       }
     ]
   };
@@ -909,8 +934,10 @@ horizontal: false
   
   // 获取百度地图实例
   var bmap = chartTravels.getModel().getComponent('bmap').getBMap();
-  // bmap.addControl(new BMap.MapTypeControl());
-  // bmap.addControl(new BMap.NavigationControl());
   // 你可以调整地图初始化时的缩放和位置设置
   bmap.centerAndZoom(new BMap.Point(104.114129, 32.550339), 5);  // 强制设置中心和缩放级别
+  setTimeout(function() {
+    bmap.addControl(new BMap.MapTypeControl());
+    bmap.addControl(new BMap.NavigationControl());
+  }, 500); // 延迟加载控件
 </script>
