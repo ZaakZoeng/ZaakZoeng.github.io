@@ -168,7 +168,7 @@ horizontal: false
     { name: "志愿军·生死存亡", type: "电影票", date: "2024-10-31", location: "杭州", members: ["华大党支部"] },
     { name: "好东西", type: "电影票", date: "2024-11-30", location: "杭州", members: ["媛媛"] },
     { name: "误杀3", type: "电影票", date: "2024-12-28", location: "深圳", members: ["媛媛"] },
-    { name: "破·地狱", type: "电影票", date: "2024-12-29", location: "深圳", members: ["媛媛"] }
+    { name: "破·地狱", type: "电影票", date: "2024-12-29", location: "深圳", members: ["媛媛"] },
     { name: '"骗骗"喜欢你', type: "电影票", date: "2025-01-11", location: "深圳", members: ["媛媛"] }
   ];
 
@@ -928,16 +928,33 @@ horizontal: false
   };
 
   chartTravels.setOption(optionTravels);
-  // 获取百度地图实例
+
+// 获取百度地图实例
   var bmap = chartTravels.getModel().getComponent('bmap').getBMap();
-  // 你可以调整地图初始化时的缩放和位置设置
-  bmap.centerAndZoom(new BMap.Point(104.114129, 32.550339), 5);  // 强制设置中心和缩放级别
-  setTimeout(function() {
-    bmap.addControl(new BMap.MapTypeControl());
-    bmap.addControl(new BMap.NavigationControl());
-  }, 50); // 延迟加载控件
+  console.log(1);
+  console.log(bmap.getCenter());
+  console.log(bmap.getZoom());
+
+  // 强制设置中心和缩放级别
+  bmap.centerAndZoom(new BMap.Point(104.114129, 32.550339), 5);  // 设置中心和缩放级别
+
+  console.log(2);
+  console.log(bmap.getCenter());
+  console.log(bmap.getZoom());
+
+  // 确保在地图加载完成后再添加控件
+  bmap.addControl(new BMap.MapTypeControl());
+  bmap.addControl(new BMap.NavigationControl());
+
+
+  console.log(3);
+  console.log(bmap.getCenter());
+  console.log(bmap.getZoom());
+
+  // 确保在地图初始化后调整图表大小
   chartTravels.resize();
 
+  // 监听窗口大小变化，重新调整图表大小
   window.onresize = function () {
     chartTravels.resize();
   };
