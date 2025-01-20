@@ -902,9 +902,15 @@ horizontal: false
   };
 
   chartTravels.setOption(optionTravels);
+
+  window.onresize = function () {
+    chartTravels.resize();
+  };
   
   // 获取百度地图实例
   var bmap = chartTravels.getModel().getComponent('bmap').getBMap();
   // bmap.addControl(new BMap.MapTypeControl());
   // bmap.addControl(new BMap.NavigationControl());
+  // 你可以调整地图初始化时的缩放和位置设置
+  bmap.centerAndZoom(new BMap.Point(104.114129, 32.550339), 5);  // 强制设置中心和缩放级别
 </script>
