@@ -169,7 +169,8 @@ horizontal: false
     { name: "好东西", type: "电影票", date: "2024-11-30", location: "杭州", members: ["媛媛"] },
     { name: "误杀3", type: "电影票", date: "2024-12-28", location: "深圳", members: ["媛媛"] },
     { name: "破·地狱", type: "电影票", date: "2024-12-29", location: "深圳", members: ["媛媛"] },
-    { name: '"骗骗"喜欢你', type: "电影票", date: "2025-01-11", location: "深圳", members: ["媛媛"] }
+    { name: '"骗骗"喜欢你', type: "电影票", date: "2025-01-11", location: "深圳", members: ["媛媛"] },
+    { name: "", type: "", date: "2025-02-01", location: "", members: [""] }
   ];
 
   // 统计函数
