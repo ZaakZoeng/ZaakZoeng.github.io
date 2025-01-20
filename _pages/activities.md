@@ -629,39 +629,39 @@ horizontal: false
     }
     return res;
   };
-  function renderItem(params, api) {
-    var coords = [
-      [116.46, 39.92],  // 北京
-      [120.33, 36.07],  // 青岛
-      [122.20, 29.98],  // 舟山
-      [114.17, 22.32],  // 香港
-      [110.58, 19.16],  // 琼海博鳌
-      [110.20, 20.04],  // 海口
-      // [113.23, 23.16],  // 广州
-      [114.48, 38.03],  // 石家庄
-    ];
-    var points = [];
-    for (var i = 0; i < coords.length; i++) {
-      points.push(api.coord(coords[i]));
-    }
-    var color = api.visual('color');
-    return {
-      type: 'polygon',
-      shape: {
-        points: echarts.graphic.clipPointsByRect(points, {
-          x: params.coordSys.x,
-          y: params.coordSys.y,
-          width: params.coordSys.width,
-          height: params.coordSys.height
-        })
-      },
-      style: api.style({
-        fill: color,
-        stroke: echarts.color.lift(color)
-      })
-    };
-  };
-  
+  // function renderItem(params, api) {
+  //   var coords = [
+  //     [116.46, 39.92],  // 北京
+  //     [120.33, 36.07],  // 青岛
+  //     [122.20, 29.98],  // 舟山
+  //     [114.17, 22.32],  // 香港
+  //     [110.58, 19.16],  // 琼海博鳌
+  //     [110.20, 20.04],  // 海口
+  //     // [113.23, 23.16],  // 广州
+  //     [114.48, 38.03],  // 石家庄
+  //   ];
+  //   var points = [];
+  //   for (var i = 0; i < coords.length; i++) {
+  //     points.push(api.coord(coords[i]));
+  //   }
+  //   var color = api.visual('color');
+  //   return {
+  //     type: 'polygon',
+  //     shape: {
+  //       points: echarts.graphic.clipPointsByRect(points, {
+  //         x: params.coordSys.x,
+  //         y: params.coordSys.y,
+  //         width: params.coordSys.width,
+  //         height: params.coordSys.height
+  //       })
+  //     },
+  //     style: api.style({
+  //       fill: color,
+  //       stroke: echarts.color.lift(color)
+  //     })
+  //   };
+  // };
+
   var optionTravels = {
       toolbox: {
       feature: {
@@ -881,18 +881,18 @@ horizontal: false
           shadowColor: '#333'
         },
         zlevel: 1
-      },
-      {
-        type: 'custom',
-        coordinateSystem: 'bmap',
-        renderItem: renderItem,
-        itemStyle: {
-          opacity: 0.5
-        },
-        animation: false,
-        silent: true,
-        data: [0],
-        z: -10
+      // },
+      // {
+      //   type: 'custom',
+      //   coordinateSystem: 'bmap',
+      //   renderItem: renderItem,
+      //   itemStyle: {
+      //     opacity: 0.5
+      //   },
+      //   animation: false,
+      //   silent: true,
+      //   data: [0],
+      //   z: -10
       }
     ]
   };
