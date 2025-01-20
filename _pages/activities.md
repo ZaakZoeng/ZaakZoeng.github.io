@@ -905,6 +905,6 @@ horizontal: false
   
   // 获取百度地图实例
   var bmap = chartTravels.getModel().getComponent('bmap').getBMap();
-  bmap.addControl(new BMap.MapTypeControl());
-  // bmap.addControl(new BMap.NavigationControl());
+  // bmap.addControl(new BMap.MapTypeControl());
+  bmap.addControl(new BMap.NavigationControl());
 </script>
