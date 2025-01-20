@@ -39,6 +39,9 @@ horizontal: false
 <!-- 引入 百度地图AK -->
 <script src="https://api.map.baidu.com/api?v=3.0&ak=Xdp40nHl9e5tLwMiDoqhv8HbB4Z2sErJ"></script>
 
+<!-- 引入百度地图扩展 -->
+<script src="https://cdn.jsdelivr.net/npm/echarts/extension/bmap/bmap.min.js"></script>
+
 <!-- Sports -->
 <script>
   var chartSports = echarts.init(document.getElementById('echart-sports'));
@@ -627,6 +630,7 @@ horizontal: false
         });
       }
     }
+    console.log(res);
     return res;
   };
   // function renderItem(params, api) {
@@ -898,4 +902,8 @@ horizontal: false
   };
 
   chartTravels.setOption(optionTravels);
+  
+  // 获取百度地图实例
+  var bmap = chartTravels.getModel().getComponent('bmap').getBMap();
+  bmap.addControl(new BMap.NavigationControl());
 </script>
