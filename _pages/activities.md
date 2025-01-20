@@ -673,7 +673,7 @@ horizontal: false
     },
     backgroundColor: 'transparent',
     title: {
-      text: '小泽的城市点亮地图',
+      text: "Ze Zhang's Travel Footprint",
       // subtext: 'data from PM25.in',
       // sublink: 'http://www.pm25.in',
       left: 'center',
