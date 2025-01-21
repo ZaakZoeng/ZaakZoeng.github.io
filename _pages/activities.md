@@ -472,7 +472,7 @@ horizontal: false
       },
       calculable: true,
       grid: {
-        top: 200,
+        top: 120,
         bottom: 80,
         tooltip: {
           trigger: 'axis',
