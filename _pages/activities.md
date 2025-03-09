@@ -170,7 +170,11 @@ horizontal: false
     { name: "误杀3", type: "电影票", date: "2024-12-28", location: "深圳", members: ["媛媛"] },
     { name: "破·地狱", type: "电影票", date: "2024-12-29", location: "深圳", members: ["媛媛"] },
     { name: '"骗骗"喜欢你', type: "电影票", date: "2025-01-11", location: "深圳", members: ["媛媛"] },
-    { name: "", type: "", date: "2025-02-01", location: "", members: [""] }
+    { name: "美国队长4", type: "电影票", date: "2025-02-14", location: "深圳", members: ["媛媛"] },
+    { name: "白云山", type: "旅游景点门票", date: "2025-02-15", location: "广州", members: ["小钟、阿彬、晓贝"] },
+    { name: "哪吒之魔童闹海", type: "电影票", date: "2025-02-27", location: "青岛", members: ["自己"] },
+    { name: "CBA常规赛", type: "旅游景点门票", date: "2025-03-05", location: "杭州", members: ["成哥"] },
+    { name: "", type: "", date: "2025-04-01", location: "", members: [""] }
   ];
 
   // 统计函数
@@ -390,12 +394,12 @@ horizontal: false
     return obj;
   }
   dataSports.dataBasketball = dataFormatter({
-      2025: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      2025: [0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       2024: [4, 1, 5, 6, 7, 5, 6, 1, 5, 3, 8, 3],
       2023: [0, 3, 2, 7, 7, 0, 6, 3, 3, 2, 5, 3]
   });
   dataSports.dataSwimming = dataFormatter({
-      2025: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      2025: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       2024: [0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1],
       2023: [0, 4, 5, 5, 4, 0, 0, 0, 2, 3, 1, 2]
   });
