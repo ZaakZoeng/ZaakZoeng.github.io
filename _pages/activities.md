@@ -181,7 +181,7 @@ horizontal: false
     { name: "哪吒之魔童闹海", type: "电影票", date: "2025-02-27", location: "青岛", members: ["自己"] },
     { name: "CBA常规赛", type: "旅游景点门票", date: "2025-03-05", location: "杭州", members: ["成哥"] },
     { name: "第三届TICSSO国际单细胞及空间组学大会", type: "旅游景点门票", date: "2025-03-29", location: "上海", members: ["欧阳振"] },
-    { name: "", type: "", date: "2025-04-01", location: "", members: [""] }
+    { name: "", type: "", date: "2025-04-01", location: "", members: [""] },
     { name: "", type: "", date: "2025-05-01", location: "", members: [""] }
   ];
 
