@@ -142,20 +142,25 @@ horizontal: false
     { name: "孤注一掷", type: "电影票", date: "2023-08-24", location: "深圳", members: ["媛媛"] },
     { name: "暗杀风暴", type: "电影票", date: "2023-08-25", location: "深圳", members: ["媛媛"] },
     { name: "奥本海默", type: "电影票", date: "2023-08-30", location: "杭州", members: ["chenlab", "linlab"] },
+    { name: "2023年第三届全国系统生物学大会", type: "旅游景点门票", date: "2023-09-22", location: "山东泰安", members: ["承尚", "焦焦", "嘉琛", "王博", "中明"] },
     { name: "泰山", type: "旅游景点门票", date: "2023-09-25", location: "山东泰安", members: ["承尚", "焦焦", "嘉琛", "王博", "中明"] },
     { name: "鲁迅故里", type: "旅游景点门票", date: "2023-10-02", location: "浙江绍兴", members: ["伊凝", "楠总"] },
     { name: "亚运会篮球赛", type: "旅游景点门票", date: "2023-10-02", location: "浙大紫金港校区", members: ["伊凝"] },
+    { name: "杭高院-华大学术研讨交流会", type: "旅游景点门票", date: "2023-10-11", location: "杭州", members: ["焦焦", "嘉琛", "王博", "中明"] },
     { name: "坚如磐石", type: "电影票", date: "2023-10-03", location: "杭州", members: ["自己"] },
     { name: "河边的错误", type: "电影票", date: "2023-10-21", location: "深圳", members: ["媛媛"] },
     { name: "志愿军：雄兵出击", type: "电影票", date: "2023-10-27", location: "杭州", members: ["华大党支部"] },
     { name: "涉过愤怒的海", type: "电影票", date: "2023-11-25", location: "杭州", members: ["媛媛"] },
     { name: "三大队", type: "电影票", date: "2023-12-16", location: "深圳", members: ["媛媛"] },
+    { name: "杭高院生命学院第一届青年学者论坛", type: "旅游景点门票", date: "2024-01-17", location: "杭州", members: ["蔡哥"] },
     { name: "天屿山观景台", type: "旅游景点门票", date: "2024-01-28", location: "千岛湖", members: ["方方", "志伟"] },
     { name: "第二十条", type: "电影票", date: "2024-02-18", location: "深圳", members: ["媛媛"] },
     { name: "澳门一人游", type: "旅游景点门票", date: "2024-02-19", location: "澳门", members: ["自己"] },
     { name: "九龙城寨之围城", type: "电影票", date: "2024-05-02", location: "深圳", members: ["媛媛"] },
     { name: "末路狂发钱", type: "电影票", date: "2024-05-04", location: "深圳", members: ["媛媛"] },
+    { name: "第20届集智同行动议研讨会-特质动物研讨会I", type: "旅游景点门票", date: "2024-05-25", location: "杭州", members: ["方方"] },
     { name: "走走停停", type: "电影票", date: "2024-06-10", location: "深圳", members: ["媛媛"] },
+    { name: "第十九届国际基因组学大会-青年学生学者论坛", type: "旅游景点门票", date: "2024-08-01", location: "深圳", members: ["自己"] },
     { name: "抓娃娃", type: "电影票", date: "2024-08-10", location: "北京", members: ["伊凝", "雨泽"] },
     { name: "圆明园", type: "旅游景点门票", date: "2024-08-12", location: "北京", members: ["雨泽"] },
     { name: "颐和园", type: "旅游景点门票", date: "2024-08-12", location: "北京", members: ["雨泽"] },
@@ -163,6 +168,7 @@ horizontal: false
     { name: "白蛇·浮生", type: "电影票", date: "2024-08-18", location: "杭州", members: ["雨泽"] },
     { name: "一雪前耻", type: "电影票", date: "2024-09-15", location: "深圳", members: ["媛媛"] },
     { name: "大场面", type: "电影票", date: "2024-09-16", location: "深圳", members: ["媛媛"] },
+    { name: "第十三届全国生物信息学与系统生物学学术大会", type: "旅游景点门票", date: "2024-10-09", location: "海口", members: ["王博", "嘉琛", "兴宇"] },
     { name: "南昌大学杭州校友会", type: "旅游景点门票", date: "2024-10-19", location: "杭州之江饭店", members: ["旺哥", "远哥", "威哥"] },
     { name: "毒液·最后一舞", type: "电影票", date: "2024-10-26", location: "深圳", members: ["媛媛"] },
     { name: "志愿军·生死存亡", type: "电影票", date: "2024-10-31", location: "杭州", members: ["华大党支部"] },
@@ -174,7 +180,9 @@ horizontal: false
     { name: "白云山", type: "旅游景点门票", date: "2025-02-15", location: "广州", members: ["小钟、阿彬、晓贝"] },
     { name: "哪吒之魔童闹海", type: "电影票", date: "2025-02-27", location: "青岛", members: ["自己"] },
     { name: "CBA常规赛", type: "旅游景点门票", date: "2025-03-05", location: "杭州", members: ["成哥"] },
+    { name: "第三届TICSSO国际单细胞及空间组学大会", type: "旅游景点门票", date: "2025-03-29", location: "上海", members: ["欧阳振"] },
     { name: "", type: "", date: "2025-04-01", location: "", members: [""] }
+    { name: "", type: "", date: "2025-05-01", location: "", members: [""] }
   ];
 
   // 统计函数
@@ -394,7 +402,7 @@ horizontal: false
     return obj;
   }
   dataSports.dataBasketball = dataFormatter({
-      2025: [0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      2025: [0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       2024: [4, 1, 5, 6, 7, 5, 6, 1, 5, 3, 8, 3],
       2023: [0, 3, 2, 7, 7, 0, 6, 3, 3, 2, 5, 3]
   });
@@ -404,7 +412,7 @@ horizontal: false
       2023: [0, 4, 5, 5, 4, 0, 0, 0, 2, 3, 1, 2]
   });
   dataSports.dataFit = dataFormatter({
-      2025: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      2025: [0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       2024: [0, 2, 9, 0, 6, 1, 9, 6, 7, 6, 10, 9],
       2023: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   });
