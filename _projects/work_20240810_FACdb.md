@@ -20,3 +20,4 @@ Farm animals, including livestock and poultry, are indispensable in human welfar
 
 ## References
 - Paper Link: [FACdb: a comprehensive resource for genes, gut microbiota, and metabolites in farm animals.](https://doi.org/10.3389/fmicb.2025.1557285)
+- Chinese Report: [Database | FACdb：家禽基因、肠道微生物和代谢物的连接组数据库](https://www.yuque.com/parallellight/biometa/oh0oa6l4il3g15lw)
