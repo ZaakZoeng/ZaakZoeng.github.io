@@ -182,7 +182,7 @@ horizontal: false
     { name: "CBA常规赛", type: "旅游景点门票", date: "2025-03-05", location: "杭州", members: ["成哥"] },
     { name: "第三届TICSSO国际单细胞及空间组学大会", type: "旅游景点门票", date: "2025-03-29", location: "上海", members: ["欧阳振"] },
     { name: "大风杀", type: "电影票", date: "2025-05-01", location: "常州", members: ["媛媛"] },
-    { name: "", type: "", date: "2025-06-01", location: "", members: [""] }
+    { name: "", type: "", date: "2025-06-01", location: "", members: [""] },
     { name: "", type: "", date: "2025-07-01", location: "", members: [""] }
   ];
 
