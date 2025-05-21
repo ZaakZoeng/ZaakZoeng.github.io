@@ -181,8 +181,9 @@ horizontal: false
     { name: "哪吒之魔童闹海", type: "电影票", date: "2025-02-27", location: "青岛", members: ["自己"] },
     { name: "CBA常规赛", type: "旅游景点门票", date: "2025-03-05", location: "杭州", members: ["成哥"] },
     { name: "第三届TICSSO国际单细胞及空间组学大会", type: "旅游景点门票", date: "2025-03-29", location: "上海", members: ["欧阳振"] },
-    { name: "", type: "", date: "2025-04-01", location: "", members: [""] },
-    { name: "", type: "", date: "2025-05-01", location: "", members: [""] }
+    { name: "大风杀", type: "电影票", date: "2025-05-01", location: "常州", members: ["媛媛"] },
+    { name: "", type: "", date: "2025-06-01", location: "", members: [""] }
+    { name: "", type: "", date: "2025-07-01", location: "", members: [""] }
   ];
 
   // 统计函数
@@ -402,7 +403,7 @@ horizontal: false
     return obj;
   }
   dataSports.dataBasketball = dataFormatter({
-      2025: [0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      2025: [0, 0, 8, 4, 7, 0, 0, 0, 0, 0, 0, 0],
       2024: [4, 1, 5, 6, 7, 5, 6, 1, 5, 3, 8, 3],
       2023: [0, 3, 2, 7, 7, 0, 6, 3, 3, 2, 5, 3]
   });
@@ -417,7 +418,7 @@ horizontal: false
       2023: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   });
   dataSports.dataBadminton = dataFormatter({
-      2025: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      2025: [0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0],
       2024: [6, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0],
       2023: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   });
@@ -624,7 +625,8 @@ horizontal: false
     { name: '琼海博鳌', value: 2 },
     { name: '澳门', value: 4 },
     { name: '珠海', value: 2 },
-    { name: '丰城', value: 2 }
+    { name: '丰城', value: 2 },
+    { name: '常州', value: 2 }
   ];
   var geoCoordMap = {
     邢台宁晋县: [114.48, 37.05],
@@ -657,6 +659,7 @@ horizontal: false
     澳门: [113.54, 22.19],
     珠海: [113.57, 22.27],
     丰城: [115.78, 28.19],
+    常州: [119.95, 31.79],
   };
   var convertData = function (data) {
     var res = [];
