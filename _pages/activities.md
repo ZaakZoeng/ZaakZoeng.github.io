@@ -182,8 +182,16 @@ horizontal: false
     { name: "CBA常规赛", type: "旅游景点门票", date: "2025-03-05", location: "杭州", members: ["成哥"] },
     { name: "第三届TICSSO国际单细胞及空间组学大会", type: "旅游景点门票", date: "2025-03-29", location: "上海", members: ["欧阳振"] },
     { name: "大风杀", type: "电影票", date: "2025-05-01", location: "常州", members: ["媛媛"] },
-    { name: "", type: "", date: "2025-06-01", location: "", members: [""] },
-    { name: "", type: "", date: "2025-07-01", location: "", members: [""] }
+    { name: "碟中谍8：最终清算", type: "电影票", date: "2025-06-01", location: "深圳", members: ["媛媛"] },
+    { name: "恶意", type: "电影票", date: "2025-06-28", location: "深圳", members: ["媛媛"] },
+    { name: "无名之辈·否极泰来", type: "电影票", date: "2025-06-29", location: "深圳", members: ["媛媛"] },
+    { name: "戏台", type: "电影票", date: "2025-07-27", location: "深圳", members: ["媛媛"] },
+    { name: "浪浪山小妖怪", type: "电影票", date: "2025-08-24", location: "深圳", members: ["媛媛", "阿彬", "小钟"] },
+    { name: "捕风追影", type: "电影票", date: "2025-08-27", location: "深圳", members: ["媛媛"] },
+    { name: "刺杀小说家2", type: "电影票", date: "2025-10-03", location: "海口", members: ["媛媛", "媛媛朋友"] },
+    { name: "凤林火山", type: "电影票", date: "2025-10-04", location: "海口", members: ["媛媛", "家人"] },
+    { name: "志愿军·浴血和平", type: "电影票", date: "2025-10-31", location: "杭州", members: ["杭高院生命学院党支部"] }，
+    { name: "", type: "", date: "2025-11-01", location: "", members: [""] }
   ];
 
   // 统计函数
@@ -422,6 +430,11 @@ horizontal: false
       2024: [6, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0],
       2023: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   });
+  dataSports.dataTennis = dataFormatter({
+      2025: [0, 0, 0, 0, 0, 0, 0, 4, 6, 3, 3, 0],
+      2024: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      2023: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  });
 
   var optionSports = {
     baseOption: {
@@ -537,12 +550,14 @@ horizontal: false
           { data: dataSports.dataSwimming['2023'] },
           { data: dataSports.dataFit['2023'] },
           { data: dataSports.dataBadminton['2023'] },
+          { data: dataSports.dataTennis['2023'] },
           {
             data: [
               { name: 'Basketball 🏀', value: dataSports.dataBasketball['2023sum'] },
               { name: 'Swimming 🏊', value: dataSports.dataSwimming['2023sum'] },
               { name: 'Fit 💪', value: dataSports.dataFit['2023sum'] },
               { name: 'Badminton 🏸', value: dataSports.dataBadminton['2023sum'] }
+              { name: 'Tennis 🎾', value: dataSports.dataTennis['2023sum'] }
             ]
           }
         ]
@@ -554,12 +569,14 @@ horizontal: false
           { data: dataSports.dataSwimming['2024'] },
           { data: dataSports.dataFit['2024'] },
           { data: dataSports.dataBadminton['2024'] },
+          { data: dataSports.dataTennis['2024'] },
           {
             data: [
               { name: 'Basketball 🏀', value: dataSports.dataBasketball['2024sum'] },
               { name: 'Swimming 🏊', value: dataSports.dataSwimming['2024sum'] },
               { name: 'Fit 💪', value: dataSports.dataFit['2024sum'] },
               { name: 'Badminton 🏸', value: dataSports.dataBadminton['2024sum'] }
+              { name: 'Tennis 🎾', value: dataSports.dataTennis['2024sum'] }
             ]
           }
         ]
@@ -571,12 +588,14 @@ horizontal: false
           { data: dataSports.dataSwimming['2025'] },
           { data: dataSports.dataFit['2025'] },
           { data: dataSports.dataBadminton['2025'] },
+          { data: dataSports.dataTennis['2025'] },
           {
             data: [
               { name: 'Basketball 🏀', value: dataSports.dataBasketball['2025sum'] },
               { name: 'Swimming 🏊', value: dataSports.dataSwimming['2025sum'] },
               { name: 'Fit 💪', value: dataSports.dataFit['2025sum'] },
               { name: 'Badminton 🏸', value: dataSports.dataBadminton['2025sum'] }
+              { name: 'Tennis 🎾', value: dataSports.dataTennis['2025sum'] }
             ]
           }
         ]
