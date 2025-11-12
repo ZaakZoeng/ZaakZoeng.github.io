@@ -190,7 +190,7 @@ horizontal: false
     { name: "捕风追影", type: "电影票", date: "2025-08-27", location: "深圳", members: ["媛媛"] },
     { name: "刺杀小说家2", type: "电影票", date: "2025-10-03", location: "海口", members: ["媛媛", "媛媛朋友"] },
     { name: "凤林火山", type: "电影票", date: "2025-10-04", location: "海口", members: ["媛媛", "家人"] },
-    { name: "志愿军·浴血和平", type: "电影票", date: "2025-10-31", location: "杭州", members: ["杭高院生命学院党支部"] }，
+    { name: "志愿军·浴血和平", type: "电影票", date: "2025-10-31", location: "杭州", members: ["杭高院生命学院党支部"] },
     { name: "", type: "", date: "2025-11-01", location: "", members: [""] }
   ];
 
@@ -527,7 +527,7 @@ horizontal: false
           name: 'Counts'
         }
       ],
-      color: ['#ec7d3d', '#5470cd', '#ffc83d', '#8fafc4'],
+      color: ['#FF6723', '#26C9FC', '#FFC83D', '#F4F4F4', '#C8E66B'],
       series: [
         { name: 'Basketball 🏀', type: 'bar', label: { show: true } },
         { name: 'Swimming 🏊', type: 'bar', label: { show: true } },
