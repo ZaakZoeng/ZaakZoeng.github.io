@@ -411,12 +411,12 @@ horizontal: false
     return obj;
   }
   dataSports.dataBasketball = dataFormatter({
-      2025: [0, 0, 8, 4, 7, 0, 0, 0, 0, 0, 0, 0],
+      2025: [0, 0, 8, 4, 10, 7, 9, 6, 2, 2, 0, 0],
       2024: [4, 1, 5, 6, 7, 5, 6, 1, 5, 3, 8, 3],
       2023: [0, 3, 2, 7, 7, 0, 6, 3, 3, 2, 5, 3]
   });
   dataSports.dataSwimming = dataFormatter({
-      2025: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      2025: [0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
       2024: [0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1],
       2023: [0, 4, 5, 5, 4, 0, 0, 0, 2, 3, 1, 2]
   });
@@ -426,12 +426,12 @@ horizontal: false
       2023: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   });
   dataSports.dataBadminton = dataFormatter({
-      2025: [0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0],
+      2025: [0, 0, 0, 2, 0, 0, 0, 0, 2, 0, 0, 0],
       2024: [6, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0],
       2023: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   });
   dataSports.dataTennis = dataFormatter({
-      2025: [0, 0, 0, 0, 0, 0, 0, 4, 6, 3, 3, 0],
+      2025: [0, 0, 0, 0, 0, 0, 0, 4, 6, 3, 0, 0],
       2024: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       2023: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   });
@@ -460,7 +460,17 @@ horizontal: false
             symbol: 'diamond',
             symbolSize: 18
           },
-          '2025-01-01'
+          {
+            value: '2025-01-01',
+            tooltip: {
+              formatter: function (params) {
+                return 'Tennis 🎾 added in 2025';
+              }
+            },
+            symbol: 'diamond',
+            symbolSize: 18
+          },
+          '2026-01-01'
         ],
         label: {
           formatter: function (s) {
