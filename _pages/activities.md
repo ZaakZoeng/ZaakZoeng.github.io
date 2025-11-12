@@ -494,7 +494,7 @@ horizontal: false
       legend: {
         left: 'center',
         top: 60,
-        data: ['Basketball 🏀', 'Swimming 🏊', 'Fit 💪', 'Badminton 🏸'],
+        data: ['Basketball 🏀', 'Swimming 🏊', 'Fit 💪', 'Badminton 🏸', 'Tennis 🎾'],
       },
       calculable: true,
       grid: {
@@ -533,6 +533,7 @@ horizontal: false
         { name: 'Swimming 🏊', type: 'bar', label: { show: true } },
         { name: 'Fit 💪', type: 'bar' , label: { show: true } },
         { name: 'Badminton 🏸', type: 'bar', label: { show: true } },
+        { name: 'Tennis 🎾', type: 'bar', label: { show: true } },
         {
           name: 'Sports totaling proportion',
           type: 'pie',
@@ -556,7 +557,7 @@ horizontal: false
               { name: 'Basketball 🏀', value: dataSports.dataBasketball['2023sum'] },
               { name: 'Swimming 🏊', value: dataSports.dataSwimming['2023sum'] },
               { name: 'Fit 💪', value: dataSports.dataFit['2023sum'] },
-              { name: 'Badminton 🏸', value: dataSports.dataBadminton['2023sum'] }
+              { name: 'Badminton 🏸', value: dataSports.dataBadminton['2023sum'] },
               { name: 'Tennis 🎾', value: dataSports.dataTennis['2023sum'] }
             ]
           }
@@ -575,7 +576,7 @@ horizontal: false
               { name: 'Basketball 🏀', value: dataSports.dataBasketball['2024sum'] },
               { name: 'Swimming 🏊', value: dataSports.dataSwimming['2024sum'] },
               { name: 'Fit 💪', value: dataSports.dataFit['2024sum'] },
-              { name: 'Badminton 🏸', value: dataSports.dataBadminton['2024sum'] }
+              { name: 'Badminton 🏸', value: dataSports.dataBadminton['2024sum'] },
               { name: 'Tennis 🎾', value: dataSports.dataTennis['2024sum'] }
             ]
           }
@@ -594,7 +595,7 @@ horizontal: false
               { name: 'Basketball 🏀', value: dataSports.dataBasketball['2025sum'] },
               { name: 'Swimming 🏊', value: dataSports.dataSwimming['2025sum'] },
               { name: 'Fit 💪', value: dataSports.dataFit['2025sum'] },
-              { name: 'Badminton 🏸', value: dataSports.dataBadminton['2025sum'] }
+              { name: 'Badminton 🏸', value: dataSports.dataBadminton['2025sum'] },
               { name: 'Tennis 🎾', value: dataSports.dataTennis['2025sum'] }
             ]
           }
