@@ -474,8 +474,8 @@ horizontal: false
             },
             symbol: 'diamond',
             symbolSize: 18
-          },
-          '2026-01-01'
+          }
+          // '2026-01-01'
         ],
         label: {
           formatter: function (s) {
