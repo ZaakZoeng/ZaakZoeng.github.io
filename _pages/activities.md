@@ -479,8 +479,8 @@ horizontal: false
             },
             symbol: 'diamond',
             symbolSize: 18
-          }
-          // '2026-01-01'
+          },
+          '2026-01-01'
         ],
         label: {
           formatter: function (s) {
@@ -655,6 +655,7 @@ horizontal: false
   var chartTravels = echarts.init(document.getElementById('echart-travels'));
 
   var dataTravels = [
+    // 
     { name: '邢台宁晋县', value: 31 },
     { name: '石家庄', value: 24 },
     { name: '衡水', value: 2 },
