@@ -28,7 +28,8 @@ horizontal: false
   <!-- Travels -->
   <h2 class="category">Travels</h2>
   <div class="container">
-    <div id="echart-travels" style="width: 100%; height: 500px;"></div>
+    <div id="leaflet-travels" style="width: 100%; height: 600px;"></div>
+    <!-- <div id="echart-travels" style="width: 100%; height: 500px;"></div> -->
   </div>
   <div class="grid"></div>
 </div>
@@ -36,11 +37,13 @@ horizontal: false
 <!-- 引入 ECharts 库 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/echarts.min.js"></script>
 
+<!-- 引入 leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <!-- 引入百度地图扩展 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/extension/bmap.min.js"></script>
-
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/extension/bmap.min.js"></script> -->
 <!-- 引入 百度地图AK -->
-<script src="https://api.map.baidu.com/api?v=3.0&ak=Xdp40nHl9e5tLwMiDoqhv8HbB4Z2sErJ"></script>
+<!-- <script src="https://api.map.baidu.com/api?v=3.0&ak=Xdp40nHl9e5tLwMiDoqhv8HbB4Z2sErJ"></script> -->
 
 <!-- Tickets -->
 <script>
@@ -656,6 +659,221 @@ horizontal: false
 
 <!-- Travels -->
 <script>
+  // =========================
+  // 1) 数据：沿用你的原始数据
+  // =========================
+  var dataTravels = [
+    { name: '邢台宁晋县', value: 31 },
+    { name: '石家庄', value: 24 },
+    { name: '衡水', value: 2 },
+    { name: '淄博', value: 3 },
+    { name: '辛集', value: 2 },
+    { name: '南昌', value: 54 },
+    { name: '长沙', value: 2 },
+    { name: '天津', value: 1 },
+    { name: '武汉', value: 3 },
+    { name: '深圳', value: 63 },
+    { name: '杭州', value: 63 },
+    { name: '余姚', value: 2 },
+    { name: '香港', value: 7 },
+    { name: '广州', value: 2 },
+    { name: '上海', value: 2 },
+    { name: '舟山', value: 1 },
+    { name: '北京', value: 12 },
+    { name: '廊坊', value: 3 },
+    { name: '诸暨', value: 2 },
+    { name: '绍兴', value: 4 },
+    { name: '南京', value: 1 },
+    { name: '泰安', value: 3 },
+    { name: '青岛', value: 4 },
+    { name: '千岛湖', value: 3 },
+    { name: '海口', value: 5 },
+    { name: '文昌', value: 1 },
+    { name: '琼海博鳌', value: 2 },
+    { name: '澳门', value: 4 },
+    { name: '珠海', value: 2 },
+    { name: '丰城', value: 2 },
+    { name: '常州', value: 2 }
+  ];
+
+  // 注意：你原来是 [lng, lat]；Leaflet 需要 [lat, lng]
+  var geoCoordMap = {
+    邢台宁晋县: [114.48, 37.05],
+    石家庄: [114.48, 38.03],
+    衡水枣强: [115.72, 37.52],
+    淄博: [118.05, 36.81],
+    辛集: [115.22, 37.94],
+    南昌: [115.89, 28.68],
+    长沙: [112.93, 28.23],
+    天津: [117.20, 39.12],
+    武汉: [114.30, 30.59],
+    深圳: [114.07, 22.62],
+    杭州: [120.19, 30.26],
+    余姚: [121.56, 29.86],
+    香港: [114.17, 22.32],
+    广州: [113.23, 23.16],
+    上海: [121.48, 31.22],
+    舟山: [122.20, 29.98],
+    北京: [116.46, 39.92],
+    廊坊: [116.70, 39.53],
+    诸暨: [120.23, 29.71],
+    绍兴: [120.58, 30.01],
+    南京: [118.78, 32.04],
+    泰安: [117.13, 36.18],
+    青岛: [120.33, 36.07],
+    千岛湖: [119.04, 29.61],
+    海口: [110.20, 20.04],
+    文昌: [110.80, 19.54],
+    琼海博鳌: [110.58, 19.16],
+    澳门: [113.54, 22.19],
+    珠海: [113.57, 22.27],
+    丰城: [115.78, 28.19],
+    常州: [119.95, 31.79]
+  };
+
+  // 将 dataTravels 转为 Leaflet 可用点（过滤掉没有坐标的）
+  function buildPoints(data, coordMap) {
+    return data
+      .map(function (d) {
+        var coord = coordMap[d.name];
+        if (!coord) return null;
+        return {
+          name: d.name,
+          value: d.value,
+          lng: coord[0],
+          lat: coord[1]
+        };
+      })
+      .filter(Boolean);
+  }
+
+  var points = buildPoints(dataTravels, geoCoordMap);
+
+  // =========================
+  // 2) 初始化 Leaflet 地图
+  // =========================
+  var map = L.map('leaflet-travels', {
+    scrollWheelZoom: true
+  });
+
+  // OSM 底图
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data © OpenStreetMap contributors'
+  }).addTo(map);
+
+  // fitBounds：自动框选所有点
+  var bounds = L.latLngBounds(points.map(function (p) { return [p.lat, p.lng]; }));
+  map.fitBounds(bounds, { padding: [30, 30] });
+
+  // =========================
+  // 3) 点样式：普通点 + 高频点
+  // =========================
+  var maxVal = Math.max.apply(null, points.map(function (p) { return p.value; })) || 1;
+
+  // 半径映射：你可以按需要调整
+  function radiusByValue(v) {
+    // 4~18 像素区间
+    return 4 + (v / maxVal) * 14;
+  }
+
+  // 高频点定义：这里用 Top N（与你原来的 sort 后 effectScatter 类似）
+  var TOP_N = 8;
+  var topSet = new Set(
+    points
+      .slice()
+      .sort(function (a, b) { return b.value - a.value; })
+      .slice(0, TOP_N)
+      .map(function (p) { return p.name; })
+  );
+
+  var layerAll = L.layerGroup().addTo(map);
+  var layerTop = L.layerGroup().addTo(map);
+
+  points.forEach(function (p) {
+    var isTop = topSet.has(p.name);
+
+    // 普通层（小点）
+    var baseCircle = L.circleMarker([p.lat, p.lng], {
+      radius: 6,                 // 普通点固定 6（等价你 scatter 里 return 8 的“统一点大小”）
+      color: '#ddb926',
+      weight: 1,
+      fillColor: '#ddb926',
+      fillOpacity: 0.85
+    })
+      .bindTooltip(p.name + '：' + p.value, { direction: 'top', sticky: true })
+      .bindPopup('<b>' + p.name + '</b><br/>Times: ' + p.value);
+
+    baseCircle.addTo(layerAll);
+
+    // 高频层（大点 + 脉冲）
+    if (isTop) {
+      var topCircle = L.circleMarker([p.lat, p.lng], {
+        radius: radiusByValue(p.value),
+        color: '#f4e925',
+        weight: 2,
+        fillColor: '#f4e925',
+        fillOpacity: 0.65,
+        className: 'pulse-circle'
+      })
+        .bindTooltip('[Top] ' + p.name + '：' + p.value, { direction: 'top', sticky: true })
+        .bindPopup('<b>' + p.name + '</b><br/>Times: ' + p.value);
+
+      topCircle.addTo(layerTop);
+    }
+  });
+
+  // =========================
+  // 4) 复刻你原来的 renderItem 多边形（可选）
+  // =========================
+  var polygonLngLat = [
+    [116.46, 39.92],  // 北京
+    [120.33, 36.07],  // 青岛
+    [122.20, 29.98],  // 舟山
+    [114.17, 22.32],  // 香港
+    [110.58, 19.16],  // 琼海博鳌
+    [110.20, 20.04],  // 海口
+    [114.48, 38.03]   // 石家庄
+  ];
+
+  var polygonLatLng = polygonLngLat.map(function (c) { return [c[1], c[0]]; });
+  var layerPolygon = L.layerGroup().addTo(map);
+
+  L.polygon(polygonLatLng, {
+    color: '#26C9FC',
+    weight: 1,
+    fillColor: '#26C9FC',
+    fillOpacity: 0.18
+  })
+    .bindPopup('<b>Travel Region (custom polygon)</b>')
+    .addTo(layerPolygon);
+
+  // =========================
+  // 5) 图层控制（相当于你 toolbox 的一些“可视开关”）
+  // =========================
+  L.control.layers(
+    null,
+    {
+      'All visits': layerAll,
+      'Top visits': layerTop,
+      'Region (polygon)': layerPolygon
+    },
+    { collapsed: true }
+  ).addTo(map);
+
+  // =========================
+  // 6) 响应式：窗口 resize 后重算地图尺寸
+  // =========================
+  window.addEventListener('resize', function () {
+    map.invalidateSize();
+  });
+
+  // 如果你的页面有折叠/Tab/动画导致地图初始时容器尺寸不稳定，
+  // 你可以在渲染后延迟一次 invalidateSize：
+  setTimeout(function () { map.invalidateSize(); }, 200);
+</script>
+
+
+<!-- <script>
   var chartTravels = echarts.init(document.getElementById('echart-travels'));
 
   var dataTravels = [
@@ -1038,4 +1256,4 @@ horizontal: false
   window.onresize = function () {
     chartTravels.resize();
   };
-</script>
+</script> -->
