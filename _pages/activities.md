@@ -186,12 +186,17 @@ horizontal: false
     { name: "恶意", type: "电影票", date: "2025-06-28", location: "深圳", members: ["媛媛"] },
     { name: "无名之辈·否极泰来", type: "电影票", date: "2025-06-29", location: "深圳", members: ["媛媛"] },
     { name: "戏台", type: "电影票", date: "2025-07-27", location: "深圳", members: ["媛媛"] },
+    { name: "南昌大学杭州校友会第三届二次会员大会暨2025年迎新送新活动", type: "旅游景点门票", date: "2025-08-16", location: "杭州", members: ["自己"] },
     { name: "浪浪山小妖怪", type: "电影票", date: "2025-08-24", location: "深圳", members: ["媛媛", "阿彬", "小钟"] },
     { name: "捕风追影", type: "电影票", date: "2025-08-27", location: "深圳", members: ["媛媛"] },
+    { name: "2025介观脑图谱国际研讨会", type: "旅游景点门票", date: "2025-09-19", location: "上海", members: ["自己"] },
     { name: "刺杀小说家2", type: "电影票", date: "2025-10-03", location: "海口", members: ["媛媛", "媛媛朋友"] },
     { name: "风林火山", type: "电影票", date: "2025-10-04", location: "海口", members: ["媛媛", "家人"] },
+    { name: "多组学大数据与人工智能驱动的生物信息学", type: "旅游景点门票", date: "2025-10-10", location: "杭州", members: ["自己"] },
+    { name: "ICG20基因组学国际会议", type: "旅游景点门票", date: "2025-10-23", location: "杭州", members: ["自己"] },
     { name: "志愿军·浴血和平", type: "电影票", date: "2025-10-31", location: "杭州", members: ["杭高院生命学院党支部"] },
-    { name: "", type: "", date: "2025-11-01", location: "", members: [""] }
+    { name: "疯狂动物城2", type: "电影票", date: "2025-11-29", location: "深圳", members: ["媛媛"] },
+    { name: "", type: "", date: "2026-02-01", location: "", members: [""] }
   ];
 
   // 统计函数
@@ -393,7 +398,7 @@ horizontal: false
   function dataFormatter(obj) {
     var pList = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May.', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
     var temp;
-    for (var year = 2023; year <= 2025; year++) {
+    for (var year = 2023; year <= 2026; year++) {
       var max = 0;
       var sum = 0;
       temp = obj[year];
@@ -412,7 +417,7 @@ horizontal: false
   }
   dataSports.dataBasketball = dataFormatter({
       2026: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      2025: [0, 0, 8, 4, 10, 7, 9, 6, 2, 2, 0, 0],
+      2025: [0, 0, 8, 4, 10, 7, 9, 6, 2, 6, 5, 5],
       2024: [4, 1, 5, 6, 7, 5, 6, 1, 5, 3, 8, 3],
       2023: [0, 3, 2, 7, 7, 0, 6, 3, 3, 2, 5, 3]
   });
@@ -436,7 +441,7 @@ horizontal: false
   });
   dataSports.dataTennis = dataFormatter({
       2026: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      2025: [0, 0, 0, 0, 0, 0, 0, 4, 6, 3, 0, 0],
+      2025: [0, 0, 0, 0, 0, 0, 0, 4, 6, 3, 5, 3],
       2024: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       2023: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   });
@@ -612,6 +617,25 @@ horizontal: false
               { name: 'Fit 💪', value: dataSports.dataFit['2025sum'] },
               { name: 'Badminton 🏸', value: dataSports.dataBadminton['2025sum'] },
               { name: 'Tennis 🎾', value: dataSports.dataTennis['2025sum'] }
+            ]
+          }
+        ]
+      },
+      {
+        title: { text: "Ze Zhang's Sports in 2026" },
+        series: [
+          { data: dataSports.dataBasketball['2026'] },
+          { data: dataSports.dataSwimming['2026'] },
+          { data: dataSports.dataFit['2026'] },
+          { data: dataSports.dataBadminton['2026'] },
+          { data: dataSports.dataTennis['2026'] },
+          {
+            data: [
+              { name: 'Basketball 🏀', value: dataSports.dataBasketball['2026sum'] },
+              { name: 'Swimming 🏊', value: dataSports.dataSwimming['2026sum'] },
+              { name: 'Fit 💪', value: dataSports.dataFit['2026sum'] },
+              { name: 'Badminton 🏸', value: dataSports.dataBadminton['2026sum'] },
+              { name: 'Tennis 🎾', value: dataSports.dataTennis['2026sum'] }
             ]
           }
         ]
