@@ -559,7 +559,11 @@ horizontal: false
           type: 'pie',
           center: ['75%', '35%'],
           radius: '28%',
-          z: 100
+          z: 100,
+          tooltip: {
+            trigger: 'item',
+            formatter: '{b}<br/>{c} ({d}%)'
+          }
         }
       ]
     },
