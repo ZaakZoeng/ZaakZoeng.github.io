@@ -145,25 +145,25 @@ horizontal: false
     { name: "孤注一掷", type: "电影票", date: "2023-08-24", location: "深圳", members: ["媛媛"] },
     { name: "暗杀风暴", type: "电影票", date: "2023-08-25", location: "深圳", members: ["媛媛"] },
     { name: "奥本海默", type: "电影票", date: "2023-08-30", location: "杭州", members: ["chenlab", "linlab"] },
-    { name: "2023年第三届全国系统生物学大会", type: "旅游景点门票", date: "2023-09-22", location: "山东泰安", members: ["承尚", "焦焦", "嘉琛", "王博", "中明"] },
+    { name: "2023年第三届全国系统生物学大会", type: "学术会议", date: "2023-09-22", location: "山东泰安", members: ["承尚", "焦焦", "嘉琛", "王博", "中明"] },
     { name: "泰山", type: "旅游景点门票", date: "2023-09-25", location: "山东泰安", members: ["承尚", "焦焦", "嘉琛", "王博", "中明"] },
     { name: "鲁迅故里", type: "旅游景点门票", date: "2023-10-02", location: "浙江绍兴", members: ["伊凝", "楠总"] },
     { name: "亚运会篮球赛", type: "旅游景点门票", date: "2023-10-02", location: "浙大紫金港校区", members: ["伊凝"] },
-    { name: "杭高院-华大学术研讨交流会", type: "旅游景点门票", date: "2023-10-11", location: "杭州", members: ["焦焦", "嘉琛", "王博", "中明"] },
+    { name: "杭高院-华大学术研讨交流会", type: "学术会议", date: "2023-10-11", location: "杭州", members: ["焦焦", "嘉琛", "王博", "中明"] },
     { name: "坚如磐石", type: "电影票", date: "2023-10-03", location: "杭州", members: ["自己"] },
     { name: "河边的错误", type: "电影票", date: "2023-10-21", location: "深圳", members: ["媛媛"] },
     { name: "志愿军：雄兵出击", type: "电影票", date: "2023-10-27", location: "杭州", members: ["华大党支部"] },
     { name: "涉过愤怒的海", type: "电影票", date: "2023-11-25", location: "杭州", members: ["媛媛"] },
     { name: "三大队", type: "电影票", date: "2023-12-16", location: "深圳", members: ["媛媛"] },
-    { name: "杭高院生命学院第一届青年学者论坛", type: "旅游景点门票", date: "2024-01-17", location: "杭州", members: ["蔡哥"] },
+    { name: "杭高院生命学院第一届青年学者论坛", type: "学术会议", date: "2024-01-17", location: "杭州", members: ["蔡哥"] },
     { name: "天屿山观景台", type: "旅游景点门票", date: "2024-01-28", location: "千岛湖", members: ["方方", "志伟"] },
     { name: "第二十条", type: "电影票", date: "2024-02-18", location: "深圳", members: ["媛媛"] },
     { name: "澳门一人游", type: "旅游景点门票", date: "2024-02-19", location: "澳门", members: ["自己"] },
     { name: "九龙城寨之围城", type: "电影票", date: "2024-05-02", location: "深圳", members: ["媛媛"] },
     { name: "末路狂发钱", type: "电影票", date: "2024-05-04", location: "深圳", members: ["媛媛"] },
-    { name: "第20届集智同行动议研讨会-特质动物研讨会I", type: "旅游景点门票", date: "2024-05-25", location: "杭州", members: ["方方"] },
+    { name: "第20届集智同行动议研讨会-特质动物研讨会I", type: "学术会议", date: "2024-05-25", location: "杭州", members: ["方方"] },
     { name: "走走停停", type: "电影票", date: "2024-06-10", location: "深圳", members: ["媛媛"] },
-    { name: "第十九届国际基因组学大会-青年学生学者论坛", type: "旅游景点门票", date: "2024-08-01", location: "深圳", members: ["自己"] },
+    { name: "第十九届国际基因组学大会-青年学生学者论坛", type: "学术会议", date: "2024-08-01", location: "深圳", members: ["自己"] },
     { name: "抓娃娃", type: "电影票", date: "2024-08-10", location: "北京", members: ["伊凝", "雨泽"] },
     { name: "圆明园", type: "旅游景点门票", date: "2024-08-12", location: "北京", members: ["雨泽"] },
     { name: "颐和园", type: "旅游景点门票", date: "2024-08-12", location: "北京", members: ["雨泽"] },
@@ -171,7 +171,7 @@ horizontal: false
     { name: "白蛇·浮生", type: "电影票", date: "2024-08-18", location: "杭州", members: ["雨泽"] },
     { name: "一雪前耻", type: "电影票", date: "2024-09-15", location: "深圳", members: ["媛媛"] },
     { name: "大场面", type: "电影票", date: "2024-09-16", location: "深圳", members: ["媛媛"] },
-    { name: "第十三届全国生物信息学与系统生物学学术大会", type: "旅游景点门票", date: "2024-10-09", location: "海口", members: ["王博", "嘉琛", "兴宇"] },
+    { name: "第十三届全国生物信息学与系统生物学学术大会", type: "学术会议", date: "2024-10-09", location: "海口", members: ["王博", "嘉琛", "兴宇"] },
     { name: "南昌大学杭州校友会", type: "旅游景点门票", date: "2024-10-19", location: "杭州之江饭店", members: ["旺哥", "远哥", "威哥"] },
     { name: "毒液·最后一舞", type: "电影票", date: "2024-10-26", location: "深圳", members: ["媛媛"] },
     { name: "志愿军·生死存亡", type: "电影票", date: "2024-10-31", location: "杭州", members: ["华大党支部"] },
@@ -183,7 +183,7 @@ horizontal: false
     { name: "白云山", type: "旅游景点门票", date: "2025-02-15", location: "广州", members: ["小钟、阿彬、晓贝"] },
     { name: "哪吒之魔童闹海", type: "电影票", date: "2025-02-27", location: "青岛", members: ["自己"] },
     { name: "CBA常规赛", type: "旅游景点门票", date: "2025-03-05", location: "杭州", members: ["成哥"] },
-    { name: "第三届TICSSO国际单细胞及空间组学大会", type: "旅游景点门票", date: "2025-03-29", location: "上海", members: ["欧阳振"] },
+    { name: "第三届TICSSO国际单细胞及空间组学大会", type: "学术会议", date: "2025-03-29", location: "上海", members: ["欧阳振"] },
     { name: "大风杀", type: "电影票", date: "2025-05-01", location: "常州", members: ["媛媛"] },
     { name: "碟中谍8：最终清算", type: "电影票", date: "2025-06-01", location: "深圳", members: ["媛媛"] },
     { name: "恶意", type: "电影票", date: "2025-06-28", location: "深圳", members: ["媛媛"] },
@@ -192,14 +192,17 @@ horizontal: false
     { name: "南昌大学杭州校友会第三届二次会员大会暨2025年迎新送新活动", type: "旅游景点门票", date: "2025-08-16", location: "杭州", members: ["自己"] },
     { name: "浪浪山小妖怪", type: "电影票", date: "2025-08-24", location: "深圳", members: ["媛媛", "阿彬", "小钟"] },
     { name: "捕风追影", type: "电影票", date: "2025-08-27", location: "深圳", members: ["媛媛"] },
-    { name: "2025介观脑图谱国际研讨会", type: "旅游景点门票", date: "2025-09-19", location: "上海", members: ["自己"] },
+    { name: "白云山", type: "旅游景点门票", date: "2025-09-04", location: "广州", members: ["阿彬"] },
+    { name: "2025介观脑图谱国际研讨会", type: "学术会议", date: "2025-09-19", location: "上海", members: ["自己"] },
     { name: "刺杀小说家2", type: "电影票", date: "2025-10-03", location: "海口", members: ["媛媛", "媛媛朋友"] },
     { name: "风林火山", type: "电影票", date: "2025-10-04", location: "海口", members: ["媛媛", "家人"] },
-    { name: "多组学大数据与人工智能驱动的生物信息学", type: "旅游景点门票", date: "2025-10-10", location: "杭州", members: ["自己"] },
-    { name: "ICG20基因组学国际会议", type: "旅游景点门票", date: "2025-10-23", location: "杭州", members: ["自己"] },
+    { name: "多组学大数据与人工智能驱动的生物信息学", type: "学术会议", date: "2025-10-10", location: "杭州", members: ["自己"] },
+    { name: "ICG20基因组学国际会议", type: "学术会议", date: "2025-10-23", location: "杭州", members: ["自己"] },
     { name: "志愿军·浴血和平", type: "电影票", date: "2025-10-31", location: "杭州", members: ["杭高院生命学院党支部"] },
     { name: "疯狂动物城2", type: "电影票", date: "2025-11-29", location: "深圳", members: ["媛媛"] },
-    { name: "", type: "", date: "2026-02-01", location: "", members: [""] }
+    { name: "爆水管", type: "电影票", date: "2026-02-01", location: "深圳", members: ["媛媛"] },
+    { name: "飞驰人生3", type: "电影票", date: "2026-03-14", location: "深圳", members: ["媛媛"] },
+    { name: "", type: "", date: "2026-04-01", location: "", members: [""] }
   ];
 
   // 统计函数
@@ -209,6 +212,7 @@ horizontal: false
 
     // 2. 创建一个对象，用于存储每个月的次数
     const monthCountMapMovies = {}; // 电影票的统计
+    const monthCountMapMeeting = {}; // 会议的统计
     const monthCountMapOthers = {}; // 其他票据的统计
     const monthDetails = {}; // 每个月的票据名称和地点
 
@@ -223,6 +227,11 @@ horizontal: false
           monthCountMapMovies[yearMonth] = 0;
         }
         monthCountMapMovies[yearMonth]++;
+      } else if (item.type === "会议") {
+        if (!monthCountMapMeeting[yearMonth]) {
+          monthCountMapMeeting[yearMonth] = 0;
+        }
+        monthCountMapMeeting[yearMonth]++;
       } else {
         if (!monthCountMapOthers[yearMonth]) {
           monthCountMapOthers[yearMonth] = 0;
@@ -255,6 +264,7 @@ horizontal: false
     // 5. 生成结果数组
     const month = allMonths; // 年份-月份列表
     const movies = allMonths.map(month => monthCountMapMovies[month] || 0); // 电影票的每月次数
+    const meeting = allMonths.map(month => monthCountMapMeeting[month] || 0); // 会议的每月次数
     const others = allMonths.map(month => monthCountMapOthers[month] || 0); // 其他票据的每月次数
     const details = allMonths.map(month => monthDetails[month] || []); // 每个月的票据名称和地点
     

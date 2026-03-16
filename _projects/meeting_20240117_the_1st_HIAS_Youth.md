@@ -4,7 +4,7 @@ title: HIAS-Youth(2024)
 description: 杭高院生命学院第一届青年学者论坛
 img: assets/img/projects_preview/meeting/project_meeting_20240117_the_1st_HIAS_Youth.jpg
 importance: 1
-category: meeting
+# category: meeting
 ---
 
 浙江省系统健康科学重点实验室/国科大杭州高等研究院生命与健康科学学院第一届青年学者论坛

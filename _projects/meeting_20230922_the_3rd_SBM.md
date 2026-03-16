@@ -4,7 +4,7 @@ title: SBM(2023)
 description: 2023年第三届全国系统生物学大会
 img: assets/img/projects_preview/meeting/project_meeting_20230922_the_3rd_SBM.jpg
 importance: 1
-category: meeting
+# category: meeting
 ---
 
 2023年第三届全国系统生物学大会
