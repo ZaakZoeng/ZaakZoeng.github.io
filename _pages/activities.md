@@ -227,7 +227,7 @@ horizontal: false
           monthCountMapMovies[yearMonth] = 0;
         }
         monthCountMapMovies[yearMonth]++;
-      } else if (item.type === "会议") {
+      } else if (item.type === "学术会议") {
         if (!monthCountMapMeeting[yearMonth]) {
           monthCountMapMeeting[yearMonth] = 0;
         }
@@ -271,13 +271,14 @@ horizontal: false
     return {
       month,
       movies,
+      meeting,
       others,
       details
     };
   }
 
   // 调用函数并获取结果
-  const { month, movies, others, details } = statisticTickets(dataTickets);
+  const { month, movies, meeting, others, details } = statisticTickets(dataTickets);
 
   var optionTickets = {
     title: {
@@ -289,11 +290,13 @@ horizontal: false
       formatter: function (params) {
         const month = params[0].name; // 当前月份
         const moviesCount = params[0].value; // 电影票数量
+        const meetingCount = params[1].value; // 会议数量
         const othersCount = params[1].value; // 其他票据数量
         const details = params[0].data.details; // 当前月份的票据详情
 
         let tooltipText = `${month}<br>`;
         tooltipText += `🎦 电影票: ${moviesCount} 次<br>`;
+        tooltipText += `📅 会议: ${meetingCount} 次<br>`;
         tooltipText += `🎫 其他票据: ${othersCount} 次<br>`;
         tooltipText += `<br>`;
 
@@ -306,7 +309,7 @@ horizontal: false
     },
     legend: {
       top: 50,
-      data: ['🎦 Movies', '🎫 Others']
+      data: ['🎦 Movies', '📅 Meeting', '🎫 Others']
     },
     grid: {
       // left: '3%',
@@ -378,6 +381,20 @@ horizontal: false
         }
       },
       {
+        name: '📅 Meeting',
+        type: 'line',
+        step: 'middle',
+        data: meeting.map((value, index) => ({
+          value,
+          details: details[index] // 将 details 绑定到每个数据点
+        })),
+        symbol: 'diamond',
+        symbolSize: 6,
+        lineStyle: {
+          width: 3
+        }
+      },
+      {
         name: '🎫 Others',
         type: 'line',
         step: 'end',
@@ -429,7 +446,7 @@ horizontal: false
     return obj;
   }
   dataSports.dataBasketball = dataFormatter({
-      2026: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      2026: [5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       2025: [0, 0, 8, 4, 10, 7, 9, 6, 2, 6, 5, 5],
       2024: [4, 1, 5, 6, 7, 5, 6, 1, 5, 3, 8, 3],
       2023: [0, 3, 2, 7, 7, 0, 6, 3, 3, 2, 5, 3]
@@ -447,7 +464,7 @@ horizontal: false
       2023: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   });
   dataSports.dataBadminton = dataFormatter({
-      2026: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      2026: [2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       2025: [0, 0, 0, 2, 0, 0, 0, 0, 2, 0, 0, 0],
       2024: [6, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0],
       2023: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]

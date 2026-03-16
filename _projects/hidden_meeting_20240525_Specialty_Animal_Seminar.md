@@ -4,7 +4,7 @@ title: Specialty Animal Seminar
 description: 第20届集智同行动议研讨会-特质动物研讨会I
 img: assets/img/projects_preview/meeting/project_meeting_20240525_Specialty_Animal_Seminar.jpg
 importance: 1
-# category: meeting
+category: meeting
 ---
 
 第20届集智同行动议研讨会-特质动物研讨会I

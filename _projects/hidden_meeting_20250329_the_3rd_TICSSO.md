@@ -4,7 +4,7 @@ title: TICSSO-3
 description: 第三届TICSSO国际单细胞及空间组学大会
 img: assets/img/projects_preview/meeting/project_meeting_20250329_TICSSO-3.jpg
 importance: 1
-# category: meeting
+category: meeting
 ---
 
 第三届TICSSO国际单细胞及空间组学大会

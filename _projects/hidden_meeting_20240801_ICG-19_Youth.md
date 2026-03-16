@@ -4,7 +4,7 @@ title: ICG-19 Youth Symposium
 description: 第十九届国际基因组学大会-青年学生学者论坛
 img: assets/img/projects_preview/meeting/project_meeting_20240801_ICG-19_Youth.png
 importance: 1
-# category: meeting
+category: meeting
 ---
 
 第十九届国际基因组学大会-青年学生学者论坛
