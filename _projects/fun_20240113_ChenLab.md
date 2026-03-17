@@ -4,7 +4,7 @@ title: ChenLab Website
 description: Computational Systems Biology Lab
 img: assets/img/projects_preview/fun/project_fun_2024_chenlab.jpg
 importance: 1
-category: fun
+# category: fun
 ---
 
 Welcome to ChenLab: <a href="http://chenlab.biometa.top/" target="_blank">Computational Systems Biology Lab</a>

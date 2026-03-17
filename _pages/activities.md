@@ -906,7 +906,7 @@ horizontal: false
       title: {
         text: getTitle(viewYear),
         left: 'center',
-        top: '3.5%'
+        top: '4%'
       },
       toolbox: {
         right: '0',
@@ -1163,11 +1163,11 @@ horizontal: false
     [116.46, 39.92],  // 北京
     [120.33, 36.07],  // 青岛
     [122.20, 29.98],  // 舟山
+    [116.35, 23.55],  // 揭阳
     [114.17, 22.32],  // 香港
     [110.58, 19.16],  // 琼海博鳌
     [110.20, 20.04],  // 海口
-    [114.48, 38.03],  // 石家庄
-    [116.35, 23.55]   // 揭阳
+    [114.48, 38.03]   // 石家庄
   ];
 
   var polygonLatLng = polygonLngLat.map(function (c) { return [c[1], c[0]]; });
