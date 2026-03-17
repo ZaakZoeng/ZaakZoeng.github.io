@@ -906,7 +906,7 @@ horizontal: false
       title: {
         text: getTitle(viewYear),
         left: 'center',
-        top: '4%'
+        top: '5%'
       },
       toolbox: {
         right: '0',
@@ -995,37 +995,37 @@ horizontal: false
   // 1) 数据：沿用你的原始数据
   // =========================
   var dataTravels = [
-    { name: '邢台宁晋县', value: 31 },
-    { name: '石家庄', value: 24 },
-    { name: '衡水', value: 2 },
-    { name: '淄博', value: 3 },
-    { name: '辛集', value: 2 },
-    { name: '南昌', value: 54 },
-    { name: '长沙', value: 2 },
+    { name: '邢台宁晋县', value: 15 },
+    { name: '石家庄', value: 1 },
+    { name: '衡水', value: 3 },
+    { name: '淄博', value: 1 },
+    { name: '辛集', value: 1 },
+    { name: '南昌', value: 4 },
+    { name: '长沙', value: 1 },
     { name: '天津', value: 1 },
-    { name: '武汉', value: 3 },
-    { name: '深圳', value: 63 },
-    { name: '杭州', value: 63 },
-    { name: '余姚', value: 2 },
-    { name: '香港', value: 7 },
-    { name: '广州', value: 2 },
-    { name: '上海', value: 2 },
+    { name: '武汉', value: 1 },
+    { name: '深圳', value: 5 },
+    { name: '杭州', value: 5 },
+    { name: '余姚', value: 1 },
+    { name: '香港', value: 1 },
+    { name: '广州', value: 1 },
+    { name: '上海', value: 1 },
     { name: '舟山', value: 1 },
-    { name: '北京', value: 12 },
-    { name: '廊坊', value: 3 },
-    { name: '诸暨', value: 2 },
-    { name: '绍兴', value: 4 },
+    { name: '北京', value: 1 },
+    { name: '廊坊', value: 1 },
+    { name: '诸暨', value: 1 },
+    { name: '绍兴', value: 1 },
     { name: '南京', value: 1 },
-    { name: '泰安', value: 3 },
-    { name: '青岛', value: 4 },
-    { name: '千岛湖', value: 3 },
-    { name: '海口', value: 5 },
+    { name: '泰安', value: 1 },
+    { name: '青岛', value: 1 },
+    { name: '千岛湖', value: 1 },
+    { name: '海口', value: 1 },
     { name: '文昌', value: 1 },
-    { name: '琼海博鳌', value: 2 },
-    { name: '澳门', value: 4 },
-    { name: '珠海', value: 2 },
-    { name: '丰城', value: 2 },
-    { name: '常州', value: 2 },
+    { name: '琼海博鳌', value: 1 },
+    { name: '澳门', value: 1 },
+    { name: '珠海', value: 1 },
+    { name: '丰城', value: 1 },
+    { name: '常州', value: 1 },
     { name: '揭阳', value: 1 }
   ];
 
@@ -1164,7 +1164,7 @@ horizontal: false
     [120.33, 36.07],  // 青岛
     [122.20, 29.98],  // 舟山
     [116.35, 23.55],  // 揭阳
-    [114.17, 22.32],  // 香港
+    // [114.17, 22.32],  // 香港
     [110.58, 19.16],  // 琼海博鳌
     [110.20, 20.04],  // 海口
     [114.48, 38.03]   // 石家庄
