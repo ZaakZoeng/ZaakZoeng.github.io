@@ -996,7 +996,7 @@ horizontal: false
   // 1) 数据：沿用你的原始数据
   // =========================
   var dataTravels = [
-    { name: '邢台宁晋县', value: 15 },
+    { name: '邢台宁晋县', value: 27 },
     { name: '石家庄', value: 1 },
     { name: '衡水', value: 3 },
     { name: '淄博', value: 1 },
