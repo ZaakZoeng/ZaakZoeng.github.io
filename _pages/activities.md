@@ -694,8 +694,9 @@ horizontal: false
 <!-- Cities -->
 <script>
   var chartCities = echarts.init(document.getElementById('echart-cities'));
+  var optionCities;
 
-  var dataCities = {
+  const dataCities = {
     '2025': {
       '1月': { '深圳': 12, '杭州': 13, '宁晋': 6 },
       '2月': { '宁晋': 6, '杭州': 12, '深圳': 3, '广州': 1, '青岛': 6 },
@@ -715,14 +716,15 @@ horizontal: false
     }
   };
 
-  function buildYearTreemap(year, monthCityDays) {
-    var cityMap = {};
+  // 单年：城市 -> 月份
+  function buildSingleYearTreemap(monthCityDays) {
+    const cityMap = {};
 
-    Object.keys(monthCityDays).forEach(function (month) {
-      var cityDays = monthCityDays[month];
+    Object.keys(monthCityDays).forEach((month) => {
+      const cityDays = monthCityDays[month];
 
-      Object.keys(cityDays).forEach(function (city) {
-        var days = cityDays[city];
+      Object.keys(cityDays).forEach((city) => {
+        const days = cityDays[city];
 
         if (!cityMap[city]) {
           cityMap[city] = {
@@ -740,61 +742,119 @@ horizontal: false
       });
     });
 
-    var cityList = Object.values(cityMap).sort(function (a, b) {
-      return b.value - a.value;
-    });
-
-    var yearTotal = cityList.reduce(function (sum, item) {
-      return sum + item.value;
-    }, 0);
-
-    return {
-      name: year,
-      value: yearTotal,
-      children: cityList
-    };
+    return Object.values(cityMap).sort((a, b) => b.value - a.value);
   }
 
-  var allYearsData = Object.keys(dataCities).sort().map(function (year) {
-    return buildYearTreemap(year, dataCities[year]);
-  });
+  // 全部：城市 -> 年份
+  function buildAllYearsTreemap(allData) {
+    const cityMap = {};
 
-  var yearDataMap = {};
-  Object.keys(dataCities).forEach(function (year) {
-    yearDataMap[year] = buildYearTreemap(year, dataCities[year]).children;
-  });
+    Object.keys(allData).forEach((year) => {
+      const monthCityDays = allData[year];
+
+      Object.keys(monthCityDays).forEach((month) => {
+        const cityDays = monthCityDays[month];
+
+        Object.keys(cityDays).forEach((city) => {
+          const days = cityDays[city];
+
+          if (!cityMap[city]) {
+            cityMap[city] = {
+              name: city,
+              value: 0,
+              yearMap: {}
+            };
+          }
+
+          cityMap[city].value += days;
+
+          if (!cityMap[city].yearMap[year]) {
+            cityMap[city].yearMap[year] = {
+              name: year,
+              value: 0
+            };
+          }
+
+          cityMap[city].yearMap[year].value += days;
+        });
+      });
+    });
+
+    return Object.values(cityMap)
+      .map((cityItem) => ({
+        name: cityItem.name,
+        value: cityItem.value,
+        children: Object.values(cityItem.yearMap).sort((a, b) => a.name.localeCompare(b.name))
+      }))
+      .sort((a, b) => b.value - a.value);
+  }
 
   function getTreemapData(viewYear) {
     if (viewYear === '全部') {
-      return allYearsData;
+      return buildAllYearsTreemap(dataCities);
     }
-    return yearDataMap[viewYear] || [];
+    return buildSingleYearTreemap(dataCities[viewYear] || {});
   }
 
   function getTitle(viewYear) {
-    if (viewYear === '全部') {
-      return 'Cities Distribution Overview';
-    }
-    return viewYear + ' Cities Distribution';
+    return viewYear === '全部'
+      ? "Ze Zhang's Cities Distribution"
+      : "Ze Zhang's Cities Distribution in " + viewYear;
   }
 
-  var currentViewYear = '全部';
-  var yearButtons = ['全部'].concat(Object.keys(dataCities).sort());
+  function getLevelOption() {
+    return [
+      {
+        itemStyle: {
+          borderColor: '#777',
+          borderWidth: 0,
+          gapWidth: 1
+        },
+        upperLabel: {
+          show: false
+        }
+      },
+      {
+        itemStyle: {
+          borderColor: '#555',
+          borderWidth: 5,
+          gapWidth: 1
+        },
+        emphasis: {
+          itemStyle: {
+            borderColor: '#ddd'
+          }
+        }
+      },
+      {
+        colorSaturation: [0.35, 0.5],
+        itemStyle: {
+          borderWidth: 5,
+          gapWidth: 1,
+          borderColorSaturation: 0.6
+        }
+      }
+    ];
+  }
+
+  const yearButtons = ['全部', ...Object.keys(dataCities).sort()];
+  let currentViewYear = '全部';
 
   function makeYearButtons(selectedYear) {
-    var startX = 40;
-    var y = 18;
-    var gap = 90;
-    var width = 70;
-    var height = 30;
+    const startX = 24;
+    const y = 16;
+    const gap = 90;
+    const width = 72;
+    const height = 28;
 
     return [
       {
         type: 'group',
-        left: 0,
+        left: '2%',
         top: 0,
-        children: yearButtons.map(function (label, index) {
-          var isActive = label === selectedYear;
+        children: yearButtons.map((label, index) => {
+          const isActive = label === selectedYear;
+          const displayText = label === '全部' ? '全部' : label + '年';
 
           return {
             type: 'group',
@@ -802,7 +862,7 @@ horizontal: false
             top: y,
             onclick: function () {
               currentViewYear = label;
-              renderCities();
+              updateChart();
             },
             children: [
               {
@@ -812,27 +872,25 @@ horizontal: false
                   y: 0,
                   width: width,
                   height: height,
-                  r: 6
+                  r: 4
                 },
                 style: {
-                  fill: isActive ? '#5470C6' : '#F2F3F5',
-                  stroke: isActive ? '#5470C6' : '#D9D9D9',
+                  fill: isActive ? '#5470C6' : '#f5f5f5',
+                  stroke: isActive ? '#5470C6' : '#d9d9d9',
                   lineWidth: 1,
-                  shadowBlur: isActive ? 6 : 0,
-                  shadowColor: 'rgba(0,0,0,0.12)',
                   cursor: 'pointer'
                 }
               },
               {
                 type: 'text',
-                left: width / 2,
-                top: height / 2,
                 style: {
-                  text: label,
+                  x: width / 2,
+                  y: height / 2,
+                  text: displayText,
                   textAlign: 'center',
                   textVerticalAlign: 'middle',
-                  fill: isActive ? '#FFFFFF' : '#333333',
-                  font: '14px sans-serif',
+                  fill: isActive ? '#fff' : '#333',
+                  font: '13px sans-serif',
                   cursor: 'pointer'
                 }
               }
@@ -843,104 +901,88 @@ horizontal: false
     ];
   }
 
-  function renderCities() {
-    var optionCities = {
+  function buildOption(viewYear) {
+    return {
       title: {
-        text: getTitle(currentViewYear),
+        text: getTitle(viewYear),
         left: 'center',
-        top: 18
+        top: '3.5%'
+      },
+      toolbox: {
+        right: '0',
+        orient: 'horizontal',
+        feature: {
+          dataView: { show: true, readOnly: false },
+          restore: { show: true },
+          saveAsImage: { show: true }
+        }
       },
       tooltip: {
         formatter: function (info) {
-          var node = info.data;
-          var treePath = info.treePathInfo
-            .slice(1)
-            .map(function (item) {
-              return item.name;
-            })
-            .join(' / ');
-          return treePath + '<br/>' + node.value + ' days';
+          var value = info.value;
+          var treePathInfo = info.treePathInfo;
+          var treePath = [];
+
+          for (var i = 1; i < treePathInfo.length; i++) {
+            treePath.push(treePathInfo[i].name);
+          }
+
+          return [
+            '<div class="tooltip-title">' +
+              echarts.format.encodeHTML(treePath.join(' / ')) +
+              '</div>',
+            'Days: ' + echarts.format.addCommas(value)
+          ].join('');
         }
       },
-      graphic: makeYearButtons(currentViewYear),
+      graphic: makeYearButtons(viewYear),
       series: [
         {
+          name: getTitle(viewYear),
           type: 'treemap',
-          top: 70,
-          left: 20,
-          right: 20,
-          bottom: 20,
+          top: 60,
+          left: '2%',
+          right: '2%',
+          bottom: '2%',
+          visibleMin: 1,
           roam: false,
           nodeClick: 'zoomToNode',
           breadcrumb: {
             show: true,
-            top: 72
+            top: 60
           },
           label: {
             show: true,
             formatter: function (params) {
-              return params.name + '\n' + params.value + ' days';
-            },
-            fontSize: 14,
-            overflow: 'break'
+              return params.name;
+            }
           },
           upperLabel: {
             show: true,
-            height: 26
+            height: 30
           },
           itemStyle: {
-            borderColor: '#FFFFFF',
-            borderWidth: 2,
-            gapWidth: 2
+            borderColor: '#fff'
           },
-          levels: [
-            {
-              itemStyle: {
-                borderColor: '#999',
-                borderWidth: 0,
-                gapWidth: 4
-              },
-              upperLabel: {
-                show: false
-              }
-            },
-            {
-              colorSaturation: [0.35, 0.6],
-              itemStyle: {
-                borderColor: '#FFFFFF',
-                borderWidth: 3,
-                gapWidth: 3
-              },
-              upperLabel: {
-                show: true
-              }
-            },
-            {
-              colorSaturation: [0.35, 0.55],
-              itemStyle: {
-                borderColor: '#FFFFFF',
-                borderWidth: 2,
-                gapWidth: 2
-              }
-            },
-            {
-              colorSaturation: [0.3, 0.5],
-              itemStyle: {
-                borderColor: '#FFFFFF',
-                borderWidth: 1,
-                gapWidth: 1
-              }
+          emphasis: {
+            itemStyle: {
+              borderColor: '#ddd'
             }
-          ],
-          data: getTreemapData(currentViewYear)
+          },
+          levels: getLevelOption(),
+          data: getTreemapData(viewYear)
         }
       ]
     };
-
-    chartCities.setOption(optionCities, true);
   }
 
-  renderCities();
+  function updateChart() {
+    chartCities.setOption(buildOption(currentViewYear), true);
+  }
+
+  optionCities = buildOption('全部');
+
+  chartCities.setOption(optionCities);
 
   window.onresize = function () {
     chartCities.resize();
@@ -1124,7 +1166,8 @@ horizontal: false
     [114.17, 22.32],  // 香港
     [110.58, 19.16],  // 琼海博鳌
     [110.20, 20.04],  // 海口
-    [114.48, 38.03]   // 石家庄
+    [114.48, 38.03],  // 石家庄
+    [116.35, 23.55]   // 揭阳
   ];
 
   var polygonLatLng = polygonLngLat.map(function (c) { return [c[1], c[0]]; });
