@@ -712,7 +712,8 @@ horizontal: false
       '12月': { '深圳': 2.5, '杭州': 28.5 }
     },
     '2026': {
-      '1月': { '深圳': 17, '杭州': 14 }
+      '1月': { '深圳': 17, '杭州': 14 },
+      '2月': { '深圳': 3, '杭州': 1, '宁晋': 24 }
     }
   };
 
@@ -906,7 +907,7 @@ horizontal: false
       title: {
         text: getTitle(viewYear),
         left: 'center',
-        top: '5%'
+        top: '6%'
       },
       toolbox: {
         right: '0',
