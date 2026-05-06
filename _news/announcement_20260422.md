@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Successfully passed my doctoral dissertation defense! ✨✨✨
+title: Successfully passed my doctoral dissertation defense! 😊
 date: 2026-04-22 00:00:00-0400
 inline: false
 related_posts: false
@@ -16,6 +16,8 @@ On April 22, 2026, I successfully defended my doctoral dissertation, bringing a 
 2026年4月22日，我顺利通过博士论文答辩，为五年的研究生学习画上了圆满的句号。过去五年里所有的辛勤付出、反复修改、熬夜实验，在答辩委员会宣布“通过”的那一刻，都变得无比值得。我由衷感谢导师的悉心指导，感谢同学们的鼎力相助，也感谢家人朋友一路以来的支持。
 
 
+from 2021.04 to 2026.04 ~
+
 <div class="row mt-3">
     <!-- 左侧图片 -->
     <div class="col-sm-6 mt-3">
@@ -30,5 +32,3 @@ On April 22, 2026, I successfully defended my doctoral dissertation, bringing a 
         </div>
     </div>
 </div>
-
-from 2021.04 to 2026.04 ~
