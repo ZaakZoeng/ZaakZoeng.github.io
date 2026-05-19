@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: Publications
-description: Chronological publications in which Ze Zhang was involved.
+description: Chronological publications in which Ze Zhang was involved. [ZZ* is (co-)corresponding author. ZZ† is (co-)first author.]
 nav: true
 nav_order: 1
 # layout: page
