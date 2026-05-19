@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Bio Databases
+title: BioDBverse
 description: Docks for Bioinformatics Databases and Web Tools. From Genes to Single Cells to Microbial Multiomics, and Extension of Biological Research Algorithms
 
 img: assets/img/projects_preview/poster/poster_202407_Docks_for_DB.jpg
@@ -13,5 +13,11 @@ In the ever-expanding field of biology, the wealth of available data presents bo
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid path="assets/img/projects_preview/poster/poster_202407_Docks_for_DB.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/projects_preview/poster/poster_202502_BioDBverse.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
