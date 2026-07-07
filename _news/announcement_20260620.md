@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Successfully passed my doctoral dissertation defense! 😊
+title: Graduated with a doctor's degree from University of Chinese Academy of Sciences. 🎓🎓🎓🎓🎓
 date: 2026-06-20 00:00:00-0400
 inline: false
 related_posts: false
