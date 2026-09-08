@@ -304,8 +304,8 @@ My research lies at the intersection of bioinformatics, complex systems, and med
   <section class="about-info-card">
     <h3>Skills</h3>
     <ul>
-      <li>💻 Data Mining, Software Design</li>
-      <li>💻 PyTorch, Vue, Django, Express, Element Plus</li>
+      <li>📊 Data Mining, Software Design</li>
+      <li>⚙️ PyTorch, Vue, Django, Express, Element Plus</li>
       <li>💻 Python, TypeScript, R</li>
     </ul>
   </section>
@@ -322,16 +322,16 @@ My research lies at the intersection of bioinformatics, complex systems, and med
   <section class="about-info-card">
     <h3>Email</h3>
     <ul>
-      <li><a href="mailto:zhangze@szu.edu.cn">✉️ zhangze@szu.edu.cn</a></li>
-      <li><a href="mailto:zaakzoeng@gmail.com">✉️ zaakzoeng@gmail.com</a></li>
+      <li>✉️ <a href="mailto:zhangze@szu.edu.cn">zhangze@szu.edu.cn</a></li>
+      <li>✉️ <a href="mailto:zaakzoeng@gmail.com">zaakzoeng@gmail.com</a></li>
     </ul>
   </section>
 
   <section class="about-info-card">
     <h3>Community &amp; Collaborators</h3>
     <ul>
-      <li><a href="https://2bf.biometa.top">🎡 2BF-Club</a></li>
-      <li><a href="https://dongwonka.github.io/">🧑 Dong Wang (汪栋)</a></li>
+      <li>🎡 <a href="https://2bf.biometa.top">2BF-Club</a></li>
+      <li>👨 <a href="https://dongwonka.github.io/">Dong Wang (汪栋)</a></li>
     </ul>
   </section>
 </div>
