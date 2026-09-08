@@ -1020,22 +1020,22 @@ horizontal: false
 <!-- Travels -->
 <script>
   // =========================
-  // 1) 数据：沿用你的原始数据
+  // 1) 数据：按照所去地区的年次统计
   // =========================
   var dataTravels = [
-    { name: '邢台宁晋县', value: 27 },
-    { name: '石家庄', value: 9 },
-    { name: '衡水', value: 3 },
-    { name: '淄博', value: 1 },
-    { name: '辛集', value: 1 },
-    { name: '南昌', value: 4 },
-    { name: '长沙', value: 1 },
-    { name: '天津', value: 1 },
-    { name: '武汉', value: 1 },
-    { name: '深圳', value: 5 },
-    { name: '杭州', value: 5 },
-    { name: '余姚', value: 1 },
-    { name: '香港', value: 1 },
+    { name: '邢台宁晋县', value: 28 },  // 家（1999-）
+    { name: '石家庄', value: 10 },  // 石家庄坐车（2017-）
+    { name: '衡水', value: 5 }, // 高中3年（2014-2017）+宣讲（2018）
+    { name: '淄博', value: 1 }, // 高中毕业去当家教（2017）
+    { name: '辛集', value: 1 }, // 转车路过（2017）
+    { name: '南昌', value: 6 }, // 大学4年（2017-2021）+回母校（2024）
+    { name: '长沙', value: 1 }, // 和媛媛去旅行（2018）
+    { name: '天津', value: 1 }, // 去姐姐家（2019）
+    { name: '武汉', value: 1 }, // 毕业去旅行（2021）
+    { name: '深圳', value: 6 }, // 研究生（2021-2026）+
+    { name: '杭州', value: 6 }, // 研究生（2021-2026）+
+    { name: '余姚', value: 1 }, // 参会（2021）
+    { name: '香港', value: 1 }, // 旅游
     { name: '广州', value: 1 },
     { name: '上海', value: 1 },
     { name: '舟山', value: 1 },
