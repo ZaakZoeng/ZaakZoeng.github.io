@@ -331,7 +331,7 @@ My research lies at the intersection of bioinformatics, complex systems, and med
     <h3>Community &amp; Collaborators</h3>
     <ul>
       <li><a href="https://2bf.biometa.top">🎡 2BF-Club</a></li>
-      <li><a href="https://dongwonka.github.io/">🧑‍🤝‍🧑 Dong Wang (汪栋)</a></li>
+      <li><a href="https://dongwonka.github.io/">🧑 Dong Wang (汪栋)</a></li>
     </ul>
   </section>
 </div>
