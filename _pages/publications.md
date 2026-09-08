@@ -14,6 +14,7 @@ nav_order: 1
 ---
 
 <!-- _pages/publications.md -->
+{% assign publication_stats = site.data.publication_stats %}
 <section class="publication-overview" aria-labelledby="publication-overview-title">
   <header class="publication-overview__header">
     <div>
@@ -21,10 +22,10 @@ nav_order: 1
       <h2 id="publication-overview-title">Publications by Year</h2>
       <p>Published papers and patents recorded in the bibliography.</p>
     </div>
-    <div class="publication-overview__summary" aria-label="8 total research outputs">
-      <span><strong>7</strong>Papers</span>
-      <span><strong>1</strong>Patent</span>
-      <span><strong>8</strong>Total</span>
+    <div class="publication-overview__summary" aria-label="{{ publication_stats.total }} total research outputs">
+      <span><strong>{{ publication_stats.paper_total }}</strong>Papers</span>
+      <span><strong>{{ publication_stats.patent_total }}</strong>Patents</span>
+      <span><strong>{{ publication_stats.total }}</strong>Total</span>
     </div>
   </header>
 
@@ -32,11 +33,11 @@ nav_order: 1
     id="publication-year-chart"
     class="publication-overview__chart"
     role="img"
-    aria-label="Stacked horizontal bar chart of papers and patents by year from 2023 to 2026"
+    aria-label="Stacked horizontal bar chart of papers and patents by year"
   ></div>
 
   <noscript>
-    <p class="publication-overview__fallback">2023: 2 papers; 2024: 1 paper; 2025: 2 papers and 1 patent; 2026: 2 papers.</p>
+    <p class="publication-overview__fallback">Enable JavaScript to view the publication statistics chart.</p>
   </noscript>
 </section>
 
@@ -161,9 +162,10 @@ nav_order: 1
     if (!chartElement || typeof echarts === 'undefined') return;
 
     const chart = echarts.init(chartElement);
-    const years = ['2023', '2024', '2025', '2026'];
-    const papers = [2, 1, 2, 2];
-    const patents = [0, 0, 1, 0];
+    const publicationStats = {{ publication_stats | jsonify }};
+    const years = publicationStats.years;
+    const papers = publicationStats.papers;
+    const patents = publicationStats.patents;
 
     const cssColor = (name, fallback) =>
       getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback;
@@ -178,7 +180,7 @@ nav_order: 1
           animationDuration: 650,
           aria: {
             enabled: true,
-            description: 'Research outputs by year. Seven papers and one patent are recorded from 2023 through 2026.'
+            description: `${publicationStats.paper_total} papers and ${publicationStats.patent_total} patents by year.`
           },
           tooltip: {
             trigger: 'axis',
@@ -212,7 +214,7 @@ nav_order: 1
           xAxis: {
             type: 'value',
             minInterval: 1,
-            max: 4,
+            max: ({ max }) => Math.max(4, Math.ceil(max)),
             axisLabel: { color: mutedColor, fontSize: 11 },
             axisLine: { show: false },
             axisTick: { show: false },
