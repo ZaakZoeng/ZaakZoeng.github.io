@@ -70,10 +70,8 @@ My research lies at the intersection of bioinformatics, complex systems, and med
 
 ### Research Interests
 
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/about_preview/research_EN.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-    </div>
+<div class="research-visual-card">
+  {% include figure.liquid path="assets/img/about_preview/research_EN.png" class="img-fluid research-visual-image" alt="Research overview" zoomable=true %}
 </div>
 
 - Comparative Multi-omics Analysis: Combined Analysis of Bulk, Single-cell, Spatial, Proteomics, Metabolomics, etc.
@@ -85,7 +83,86 @@ My research lies at the intersection of bioinformatics, complex systems, and med
 
 ### Information and Links
 
+<div class="about-info-grid">
+  <section class="about-info-card">
+    <h3>Skills</h3>
+    <ul>
+      <li>📊 Data Mining, Software Design</li>
+      <li>⚙️ PyTorch, Vue, Django, Express, Element Plus</li>
+      <li>💻 Python, TypeScript, R</li>
+    </ul>
+  </section>
+
+  <section class="about-info-card">
+    <h3>Hobbies</h3>
+    <ul>
+      <li>✍️ Blogging</li>
+      <li>🏀 Basketball, 🏊 Swimming, 🎾 Tennis</li>
+      <li>🥋 Nunchaku</li>
+    </ul>
+  </section>
+
+  <section class="about-info-card">
+    <h3>Email</h3>
+    <ul>
+      <li>✉️ <a href="mailto:zhangze@szu.edu.cn">zhangze@szu.edu.cn</a></li>
+      <li>✉️ <a href="mailto:zaakzoeng@gmail.com">zaakzoeng@gmail.com</a></li>
+    </ul>
+  </section>
+
+  <section class="about-info-card">
+    <h3>Community &amp; Collaborators</h3>
+    <ul>
+      <li>🎡 <a href="https://2bf.biometa.top">2BF-Club</a></li>
+      <li>👨 <a href="https://dongwonka.github.io/">Dong Wang (汪栋)</a></li>
+    </ul>
+  </section>
+</div>
+
+
 <style>
+  .research-visual-card {
+    position: relative;
+    overflow: hidden;
+    margin: 1.25rem 0 1.5rem;
+    padding: 0.65rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 12px;
+    background: var(--global-card-bg-color);
+    box-shadow: 0 6px 20px rgba(30, 35, 50, 0.05);
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  }
+
+  .research-visual-card::before {
+    position: absolute;
+    z-index: 1;
+    inset: 0 0 auto;
+    height: 3px;
+    content: "";
+    background: var(--global-theme-color);
+  }
+
+  .research-visual-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--global-theme-color);
+    box-shadow: 0 10px 26px rgba(30, 35, 50, 0.09);
+  }
+
+  .research-visual-card figure {
+    margin: 0;
+  }
+
+  .research-visual-card picture {
+    display: block;
+  }
+
+  .research-visual-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
   .education-timeline {
     position: relative;
     display: grid;
@@ -256,7 +333,16 @@ My research lies at the intersection of bioinformatics, complex systems, and med
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
   }
 
+  html[data-theme="dark"] .research-visual-card {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
+  }
+
   @media (max-width: 640px) {
+    .research-visual-card {
+      margin: 1rem 0 1.25rem;
+      padding: 0.4rem;
+    }
+
     .education-timeline {
       padding-left: 0;
     }
@@ -293,45 +379,10 @@ My research lies at the intersection of bioinformatics, complex systems, and med
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .research-visual-card,
     .education-card,
     .about-info-card {
       transition: none;
     }
   }
 </style>
-
-<div class="about-info-grid">
-  <section class="about-info-card">
-    <h3>Skills</h3>
-    <ul>
-      <li>📊 Data Mining, Software Design</li>
-      <li>⚙️ PyTorch, Vue, Django, Express, Element Plus</li>
-      <li>💻 Python, TypeScript, R</li>
-    </ul>
-  </section>
-
-  <section class="about-info-card">
-    <h3>Hobbies</h3>
-    <ul>
-      <li>✍️ Blogging</li>
-      <li>🏀 Basketball, 🏊 Swimming, 🎾 Tennis</li>
-      <li>🥋 Nunchaku</li>
-    </ul>
-  </section>
-
-  <section class="about-info-card">
-    <h3>Email</h3>
-    <ul>
-      <li>✉️ <a href="mailto:zhangze@szu.edu.cn">zhangze@szu.edu.cn</a></li>
-      <li>✉️ <a href="mailto:zaakzoeng@gmail.com">zaakzoeng@gmail.com</a></li>
-    </ul>
-  </section>
-
-  <section class="about-info-card">
-    <h3>Community &amp; Collaborators</h3>
-    <ul>
-      <li>🎡 <a href="https://2bf.biometa.top">2BF-Club</a></li>
-      <li>👨 <a href="https://dongwonka.github.io/">Dong Wang (汪栋)</a></li>
-    </ul>
-  </section>
-</div>
