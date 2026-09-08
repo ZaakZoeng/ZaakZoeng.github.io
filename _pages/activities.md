@@ -212,7 +212,15 @@ horizontal: false
     { name: "河狸变身计划", type: "电影票", date: "2026-03-21", location: "深圳", members: ["媛媛"] },
     { name: "挽救计划", type: "电影票", date: "2026-04-06", location: "深圳", members: ["媛媛"] },
     { name: "寒战1994", type: "电影票", date: "2026-05-05", location: "深圳", members: ["媛媛"] },
-    { name: "", type: "", date: "2026-06-01", location: "", members: [""] }
+    { name: "绵羊侦探团", type: "电影票", date: "2026-05-16", location: "深圳", members: ["媛媛"] },
+    { name: "中国人民革命军事博物馆", type: "旅游景点门票", date: "2026-06-20", location: "北京", members: ["媛媛", "爸妈姑弟"] },
+    { name: "国科大2026年毕业典礼", type: "旅游景点门票", date: "2026-06-21", location: "北京", members: ["媛媛", "爸妈姑弟", "蔡哥"] },
+    { name: "杭高院2026年毕业典礼", type: "旅游景点门票", date: "2026-06-23", location: "杭州", members: ["媛媛"] },
+    { name: "功夫女足", type: "电影票", date: "2026-07-11", location: "深圳", members: ["媛媛"] },
+    { name: "蜘蛛侠：崭新之日", type: "电影票", date: "2026-08-02", location: "深圳", members: ["媛媛"] },
+    { name: "奥德赛", type: "电影票", date: "2026-08-09", location: "深圳", members: ["春露"] },
+    { name: "欢迎来龙餐馆", type: "电影票", date: "2026-08-15", location: "深圳", members: ["媛媛"] },
+    { name: "", type: "", date: "2026-09-01", location: "", members: [""] }
   ];
 
   // 统计函数
