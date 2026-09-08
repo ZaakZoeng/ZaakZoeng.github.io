@@ -20,7 +20,6 @@ nav_order: 1
     <div>
       <span class="publication-overview__eyebrow">RESEARCH OUTPUT</span>
       <h2 id="publication-overview-title">Publications by Year</h2>
-      <p>Published papers and patents recorded in the bibliography.</p>
     </div>
     <div class="publication-overview__summary" aria-label="{{ publication_stats.total }} total research outputs">
       <span><strong>{{ publication_stats.paper_total }}</strong>Papers</span>
