@@ -18,6 +18,8 @@ social: true  # includes social icons at the bottom of the page
 ---
 I'm Ze Zhang (张泽). I am currently a postdoctoral fellow at the [University of Science and Technology of China (USTC)](https://www.ustc.edu.cn/) and a full-time researcher at [Shenzhen University South China Hospital](https://sch.szu.edu.cn/) working under the supervision of my postdoctoral advisor, Prof. [Song Wu (吴松)](https://scholar.google.com/citations?hl=en&user=InyuW5wAAAAJ). I received my Ph.D. in `Bioinformatics` from the [University of Chinese Academy of Sciences (UCAS)](https://www.ucas.ac.cn/) in July 2026. I began my graduate studies at [UCAS HIAS](http://hias.ucas.ac.cn/) in 2021 under the supervision of Prof. [Xiaoping Liu (刘小平)](https://scholar.google.com/citations?user=_yiMcX8AAAAJ&hl=zh-CN). In 2023, I transitioned from the master's track to the joint doctoral training program between UCAS HIAS and [BGI Hangzhou Research](https://research.genomics.cn/), under the joint supervision of Prof. [Luonan Chen (陈洛南)](https://scholar.google.com/citations?user=Uoqv8rkAAAAJ&hl=zh-CN&oi=ao) and Prof. [Xun Xu (徐讯)](https://scholar.google.com/citations?user=xb2Vc8MAAAAJ&hl=zh-CN&oi=ao). Before that, I received my B.Eng. in `Information Security` from [Nanchang University](http://www.ncu.edu.cn/).
 
+My research lies at the intersection of bioinformatics, complex systems, and medical artificial intelligence. I focus on AI agents, AI virtual cells (AIVC), cross-species comparative multi-omics, dynamic network modeling, early warning of critical transitions, bioinformatics databases, and intelligent analysis platforms. My work aims to develop interpretable computational methods that integrate genomic, single-cell and spatial omics, and clinical data to characterize biological state transitions and support biomedical research and precision medicine.
+
 
 ### Education and Research Experience
 
@@ -68,7 +70,11 @@ I'm Ze Zhang (张泽). I am currently a postdoctoral fellow at the [University o
 
 ### Research Interests
 
-My research lies at the intersection of bioinformatics, complex systems, and medical artificial intelligence. I focus on AI agents, AI virtual cells (AIVC), cross-species comparative multi-omics, dynamic network modeling, early warning of critical transitions, bioinformatics databases, and intelligent analysis platforms. My work aims to develop interpretable computational methods that integrate genomic, single-cell and spatial omics, and clinical data to characterize biological state transitions and support biomedical research and precision medicine.
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/about_preview/research_EN.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 - Comparative Multi-omics Analysis: Combined Analysis of Bulk, Single-cell, Spatial, Proteomics, Metabolomics, etc.
 - Cross-species Comparative Studies: Cross-species Cell State Characterization and Multi-omics Integration
