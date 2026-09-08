@@ -14,6 +14,270 @@ nav_order: 1
 ---
 
 <!-- _pages/publications.md -->
+<section class="publication-overview" aria-labelledby="publication-overview-title">
+  <header class="publication-overview__header">
+    <div>
+      <span class="publication-overview__eyebrow">RESEARCH OUTPUT</span>
+      <h2 id="publication-overview-title">Publications by Year</h2>
+      <p>Published papers and patents recorded in the bibliography.</p>
+    </div>
+    <div class="publication-overview__summary" aria-label="8 total research outputs">
+      <span><strong>7</strong>Papers</span>
+      <span><strong>1</strong>Patent</span>
+      <span><strong>8</strong>Total</span>
+    </div>
+  </header>
+
+  <div
+    id="publication-year-chart"
+    class="publication-overview__chart"
+    role="img"
+    aria-label="Stacked horizontal bar chart of papers and patents by year from 2023 to 2026"
+  ></div>
+
+  <noscript>
+    <p class="publication-overview__fallback">2023: 2 papers; 2024: 1 paper; 2025: 2 papers and 1 patent; 2026: 2 papers.</p>
+  </noscript>
+</section>
+
+<style>
+  .publication-overview {
+    position: relative;
+    overflow: hidden;
+    margin: 0.5rem 0 2.25rem;
+    padding: 1.35rem 1.4rem 1rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 14px;
+    background: var(--global-card-bg-color);
+    box-shadow: 0 8px 24px rgba(30, 35, 50, 0.06);
+  }
+
+  .publication-overview::before {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 3px;
+    content: "";
+    background: linear-gradient(90deg, #4776e6, #7257b5, #1f9d91);
+  }
+
+  .publication-overview__header {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .publication-overview__eyebrow {
+    color: var(--global-theme-color);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+  }
+
+  .publication-overview__header h2 {
+    margin: 0.25rem 0 0.35rem;
+    font-size: 1.35rem;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+  }
+
+  .publication-overview__header p {
+    margin: 0;
+    color: var(--global-text-color-light);
+    font-size: 0.82rem;
+  }
+
+  .publication-overview__summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(58px, 1fr));
+    overflow: hidden;
+    flex: 0 0 auto;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 10px;
+  }
+
+  .publication-overview__summary span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 0.65rem;
+    color: var(--global-text-color-light);
+    font-size: 0.67rem;
+    line-height: 1.25;
+  }
+
+  .publication-overview__summary span + span {
+    border-left: 1px solid var(--global-divider-color);
+  }
+
+  .publication-overview__summary strong {
+    margin-bottom: 0.08rem;
+    color: var(--global-text-color);
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .publication-overview__chart {
+    width: 100%;
+    height: 280px;
+    margin-top: 0.65rem;
+  }
+
+  .publication-overview__fallback {
+    color: var(--global-text-color-light);
+    font-size: 0.82rem;
+  }
+
+  html[data-theme="dark"] .publication-overview {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  }
+
+  @media (max-width: 640px) {
+    .publication-overview {
+      padding: 1.15rem 1rem 0.75rem;
+    }
+
+    .publication-overview__header {
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .publication-overview__summary {
+      grid-template-columns: repeat(3, 1fr);
+      width: 100%;
+    }
+
+    .publication-overview__chart {
+      height: 260px;
+      margin-top: 0.35rem;
+    }
+  }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/echarts.min.js"></script>
+<script>
+  (() => {
+    const chartElement = document.getElementById('publication-year-chart');
+    if (!chartElement || typeof echarts === 'undefined') return;
+
+    const chart = echarts.init(chartElement);
+    const years = ['2023', '2024', '2025', '2026'];
+    const papers = [2, 1, 2, 2];
+    const patents = [0, 0, 1, 0];
+
+    const cssColor = (name, fallback) =>
+      getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback;
+
+    const renderChart = () => {
+      const textColor = cssColor('--global-text-color', '#2b2b2b');
+      const mutedColor = cssColor('--global-text-color-light', '#6c757d');
+      const dividerColor = cssColor('--global-divider-color', 'rgba(0, 0, 0, 0.1)');
+
+      chart.setOption(
+        {
+          animationDuration: 650,
+          aria: {
+            enabled: true,
+            description: 'Research outputs by year. Seven papers and one patent are recorded from 2023 through 2026.'
+          },
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: { type: 'shadow' },
+            backgroundColor: cssColor('--global-card-bg-color', '#ffffff'),
+            borderColor: dividerColor,
+            textStyle: { color: textColor },
+            formatter: (items) => {
+              const visibleItems = items.filter((item) => item.value > 0);
+              const total = visibleItems.reduce((sum, item) => sum + item.value, 0);
+              const details = visibleItems
+                .map((item) => `${item.marker}${item.seriesName}: <strong>${item.value}</strong>`)
+                .join('<br>');
+              return `<strong>${items[0].axisValue}</strong><br>${details}<br>Total: <strong>${total}</strong>`;
+            }
+          },
+          legend: {
+            top: 8,
+            right: 4,
+            itemWidth: 12,
+            itemHeight: 8,
+            textStyle: { color: mutedColor, fontSize: 12 }
+          },
+          grid: {
+            top: 52,
+            right: 24,
+            bottom: 30,
+            left: 54,
+            containLabel: true
+          },
+          xAxis: {
+            type: 'value',
+            minInterval: 1,
+            max: 4,
+            axisLabel: { color: mutedColor, fontSize: 11 },
+            axisLine: { show: false },
+            axisTick: { show: false },
+            splitLine: { lineStyle: { color: dividerColor, type: 'dashed' } }
+          },
+          yAxis: {
+            type: 'category',
+            data: years,
+            axisLabel: { color: textColor, fontSize: 12, fontWeight: 600 },
+            axisLine: { show: false },
+            axisTick: { show: false }
+          },
+          series: [
+            {
+              name: 'Papers',
+              type: 'bar',
+              stack: 'total',
+              barWidth: 22,
+              emphasis: { focus: 'series' },
+              itemStyle: { color: '#5579d8', borderRadius: 4 },
+              label: {
+                show: true,
+                position: 'inside',
+                color: '#ffffff',
+                fontWeight: 700,
+                formatter: ({ value }) => (value ? value : '')
+              },
+              data: papers
+            },
+            {
+              name: 'Patents',
+              type: 'bar',
+              stack: 'total',
+              barWidth: 22,
+              emphasis: { focus: 'series' },
+              itemStyle: { color: '#1f9d91', borderRadius: 4 },
+              label: {
+                show: true,
+                position: 'inside',
+                color: '#ffffff',
+                fontWeight: 700,
+                formatter: ({ value }) => (value ? value : '')
+              },
+              data: patents
+            }
+          ]
+        },
+        true
+      );
+    };
+
+    renderChart();
+    window.addEventListener('resize', () => chart.resize());
+
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(() => chart.resize()).observe(chartElement);
+    }
+
+    new MutationObserver(renderChart).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme']
+    });
+  })();
+</script>
+
 <div class="publications">
 
 {% bibliography %}
