@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Shenzhen, China
+subtitle: Shenzhen, China (zhangze@szu.edu.cn)
 
 profile:
   align: right
@@ -28,28 +28,120 @@ My research lies at the intersection of bioinformatics, complex systems, and med
 - 2017.09~2021.07, [Nanchang University](http://www.ncu.edu.cn/), Information Security, B.Eng.
 
 ### Research Interests
-- AI virtual cells and bioinformatics algorithms
-- Multi-omics integration and dynamic network modeling
-- Critical-transition early warning
-- Bioinformatics databases and intelligent analysis platforms
+- Comparative Multi-omics Analysis: Combined Analysis of Bulk, Single-cell, Spatial, Proteomics, Metabolomics, etc.
+- Cross-species Comparative Studies: Cross-species Cell State Characterization and Multi-omics Integration
+- Dynamic Critical Early Warning: Personalized Network Modeling and Disease Critical Early Warning
+- AI Virtual Cell (AIVC): Perturbation Response Prediction and Cell State Transition Modeling
+- Bioinformatics AI Agent: Multimodal, World Model, 3D Vision, 3D Perception
 
-### Skills
-- Data Mining, Software Design
-- PyTorch, Vue, Django, Express, Element Plus
-- Python, TypeScript, R
+<style>
+  .about-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 2rem 0 1rem;
+  }
 
-### Hobbies
-- Blogging, Basketball, Swimming, Nunchaku
+  .about-info-card {
+    position: relative;
+    overflow: hidden;
+    min-width: 0;
+    padding: 1.2rem 1.25rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 12px;
+    background: var(--global-card-bg-color);
+    box-shadow: 0 6px 20px rgba(30, 35, 50, 0.05);
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  }
 
-### Email
-- [zhangze@szu.edu.cn](mailto:zhangze@szu.edu.cn)
-- [zaakzoeng@gmail.com](mailto:zaakzoeng@gmail.com)
+  .about-info-card::before {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 3px;
+    content: "";
+    background: var(--global-theme-color);
+  }
 
-### Community
-- [2BF-Club](https://2bf.biometa.top)
-- [AIxOmics](https://aixomics.biometa.top)
+  .about-info-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--global-theme-color);
+    box-shadow: 0 10px 26px rgba(30, 35, 50, 0.09);
+  }
 
-### Collaborators
-- [Chengshang LYU (吕承尚)](https://me.lvcs.top)
-- [Qibin Zhang (张奇彬)](https://github.com/zhangqib)
-- [Dong Wang (汪栋)](https://dongwonka.github.io/)
+  .about-info-card h3 {
+    margin: 0 0 0.85rem;
+    color: var(--global-theme-color);
+    font-size: 1.05rem;
+    font-weight: 650;
+  }
+
+  .about-info-card ul {
+    padding-left: 1.15rem;
+    margin: 0;
+  }
+
+  .about-info-card li {
+    margin: 0.35rem 0;
+    line-height: 1.55;
+  }
+
+  .about-info-card a {
+    overflow-wrap: anywhere;
+  }
+
+  html[data-theme="dark"] .about-info-card {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
+  }
+
+  @media (max-width: 640px) {
+    .about-info-grid {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .about-info-card {
+      padding: 1.05rem 1.1rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .about-info-card {
+      transition: none;
+    }
+  }
+</style>
+
+<div class="about-info-grid">
+  <section class="about-info-card">
+    <h3>Skills</h3>
+    <ul>
+      <li>Data Mining, Software Design</li>
+      <li>PyTorch, Vue, Django, Express, Element Plus</li>
+      <li>Python, TypeScript, R</li>
+    </ul>
+  </section>
+
+  <section class="about-info-card">
+    <h3>Hobbies</h3>
+    <ul>
+      <li>Blogging, Basketball, Swimming, Nunchaku</li>
+    </ul>
+  </section>
+
+  <section class="about-info-card">
+    <h3>Email</h3>
+    <ul>
+      <li><a href="mailto:zhangze@szu.edu.cn">zhangze@szu.edu.cn</a></li>
+      <li><a href="mailto:zaakzoeng@gmail.com">zaakzoeng@gmail.com</a></li>
+    </ul>
+  </section>
+
+  <section class="about-info-card">
+    <h3>Community &amp; Collaborators</h3>
+    <ul>
+      <li><a href="https://2bf.biometa.top">2BF-Club</a></li>
+      <li><a href="https://dongwonka.github.io/">Dong Wang (汪栋)</a></li>
+    </ul>
+  </section>
+</div>
