@@ -21,31 +21,13 @@ I'm Ze Zhang (张泽). I am currently a postdoctoral fellow at the [University o
 My research lies at the intersection of bioinformatics, complex systems, and medical artificial intelligence. I focus on AI agents, AI virtual cells (AIVC), cross-species comparative multi-omics, dynamic network modeling, early warning of critical transitions, bioinformatics databases, and intelligent analysis platforms. My work aims to develop interpretable computational methods that integrate genomic, single-cell and spatial omics, and clinical data to characterize biological state transitions and support biomedical research and precision medicine.
 
 
-### Education and Research Experience
+### Education Background
 
 <div class="education-timeline">
   <article class="education-card">
-    <div class="education-logos" aria-label="University of Science and Technology of China and Shenzhen University">
-      <span class="education-logo">
-        <img src="{{ '/assets/img/about_preview/logo_USTC.png' | relative_url }}" alt="USTC logo" loading="lazy" decoding="async">
-      </span>
-      <span class="education-logo">
-        <img src="{{ '/assets/img/about_preview/logo_SZU.png' | relative_url }}" alt="SZU logo" loading="lazy" decoding="async">
-      </span>
-    </div>
-    <div class="education-content">
-      <span class="education-period">2026.09~Present</span>
-      <p><a href="https://www.ustc.edu.cn/">University of Science and Technology of China (USTC)</a>, Electronic Science and Technology, Postdoctoral Fellow, Supervisor: Prof. <a href="https://scholar.google.com/citations?hl=en&amp;user=InyuW5wAAAAJ">Song Wu (吴松)</a></p>
-    </div>
-  </article>
-
-  <article class="education-card">
-    <div class="education-logos" aria-label="University of Chinese Academy of Sciences and BGI">
+    <div class="education-logos" aria-label="University of Chinese Academy of Sciences">
       <span class="education-logo">
         <img src="{{ '/assets/img/about_preview/logo_UCAS.png' | relative_url }}" alt="UCAS logo" loading="lazy" decoding="async">
-      </span>
-      <span class="education-logo education-logo--wide">
-        <img src="{{ '/assets/img/about_preview/logo_BGI.png' | relative_url }}" alt="BGI logo" loading="lazy" decoding="async">
       </span>
     </div>
     <div class="education-content">
@@ -63,6 +45,37 @@ My research lies at the intersection of bioinformatics, complex systems, and med
     <div class="education-content">
       <span class="education-period">2017.09~2021.07</span>
       <p><a href="http://www.ncu.edu.cn/">Nanchang University</a>, Information Security, B.Eng.</p>
+    </div>
+  </article>
+</div>
+
+### Work Experience
+
+<div class="education-timeline">
+  <article class="education-card">
+    <div class="education-logos" aria-label="University of Science and Technology of China and Shenzhen University">
+      <span class="education-logo">
+        <img src="{{ '/assets/img/about_preview/logo_USTC.png' | relative_url }}" alt="USTC logo" loading="lazy" decoding="async">
+      </span>
+      <span class="education-logo">
+        <img src="{{ '/assets/img/about_preview/logo_SZU.png' | relative_url }}" alt="SZU logo" loading="lazy" decoding="async">
+      </span>
+    </div>
+    <div class="education-content">
+      <span class="education-period">2026.09~Present</span>
+      <p><a href="https://www.ustc.edu.cn/">University of Science and Technology of China (USTC)</a>, Electronic Science and Technology, Postdoctoral Fellow; <a href="https://sch.szu.edu.cn/">Shenzhen University South China Hospital</a>, Full-time Researcher. Supervisor: Prof. <a href="https://scholar.google.com/citations?hl=en&amp;user=InyuW5wAAAAJ">Song Wu (吴松)</a></p>
+    </div>
+  </article>
+
+  <article class="education-card">
+    <div class="education-logos" aria-label="BGI Hangzhou Research">
+      <span class="education-logo education-logo--wide">
+        <img src="{{ '/assets/img/about_preview/logo_BGI.png' | relative_url }}" alt="BGI logo" loading="lazy" decoding="async">
+      </span>
+    </div>
+    <div class="education-content">
+      <span class="education-period">2023~2026.07</span>
+      <p><a href="https://research.genomics.cn/">BGI Hangzhou Research</a>, Joint Doctoral Research with UCAS HIAS, Supervisors: Prof. <a href="https://scholar.google.com/citations?user=Uoqv8rkAAAAJ&amp;hl=zh-CN&amp;oi=ao">Luonan Chen (陈洛南)</a> and Prof. <a href="https://scholar.google.com/citations?user=xb2Vc8MAAAAJ&amp;hl=zh-CN&amp;oi=ao">Xun Xu (徐讯)</a></p>
     </div>
   </article>
 </div>
