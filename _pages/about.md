@@ -29,6 +29,9 @@ My research lies at the intersection of bioinformatics, complex systems, and med
       <span class="education-logo">
         <img src="{{ '/assets/img/about_preview/logo_UCAS.png' | relative_url }}" alt="UCAS logo" loading="lazy" decoding="async">
       </span>
+      <span class="education-logo">
+        <img src="{{ '/assets/img/about_preview/logo_CEMCS.png' | relative_url }}" alt="CEMCS logo" loading="lazy" decoding="async">
+      </span>
     </div>
     <div class="education-content">
       <span class="education-period">2021.09~2026.07</span>
@@ -60,7 +63,7 @@ My research lies at the intersection of bioinformatics, complex systems, and med
     </div>
     <div class="education-content">
       <span class="education-period">2026.09~Present</span>
-      <p><a href="https://www.ustc.edu.cn/">University of Science and Technology of China (USTC)</a>, Electronic Science and Technology, Postdoctoral Fellow. Supervisor: Prof. <a href="https://scholar.google.com/citations?hl=en&amp;user=InyuW5wAAAAJ">Song Wu (吴松)</a></p>
+      <p><a href="https://www.ustc.edu.cn/">University of Science and Technology of China (USTC)</a>, Electronic Science and Technology, Postdoctoral Fellow. Co-advisor: Prof. <a href="https://scholar.google.com/citations?hl=en&amp;user=InyuW5wAAAAJ">Song Wu (吴松)</a></p>
     </div>
   </article>
 
