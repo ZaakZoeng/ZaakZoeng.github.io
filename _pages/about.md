@@ -57,13 +57,25 @@ My research lies at the intersection of bioinformatics, complex systems, and med
       <span class="education-logo">
         <img src="{{ '/assets/img/about_preview/logo_USTC.png' | relative_url }}" alt="USTC logo" loading="lazy" decoding="async">
       </span>
+    </div>
+    <div class="education-content">
+      <span class="education-period">2026.09~Present</span>
+      <p><a href="https://www.ustc.edu.cn/">University of Science and Technology of China (USTC)</a>, Electronic Science and Technology, Postdoctoral Fellow. Supervisor: Prof. <a href="https://scholar.google.com/citations?hl=en&amp;user=InyuW5wAAAAJ">Song Wu (吴松)</a></p>
+    </div>
+  </article>
+
+  <article class="education-card">
+    <div class="education-logos" aria-label="Shenzhen University South China Hospital">
       <span class="education-logo">
         <img src="{{ '/assets/img/about_preview/logo_SZU.png' | relative_url }}" alt="SZU logo" loading="lazy" decoding="async">
+      </span>
+          <span class="education-logo">
+        <img src="{{ '/assets/img/about_preview/logo_SZUSCH.png' | relative_url }}" alt="SZUSCH logo" loading="lazy" decoding="async">
       </span>
     </div>
     <div class="education-content">
       <span class="education-period">2026.09~Present</span>
-      <p><a href="https://www.ustc.edu.cn/">University of Science and Technology of China (USTC)</a>, Electronic Science and Technology, Postdoctoral Fellow; <a href="https://sch.szu.edu.cn/">Shenzhen University South China Hospital</a>, Full-time Researcher. Supervisor: Prof. <a href="https://scholar.google.com/citations?hl=en&amp;user=InyuW5wAAAAJ">Song Wu (吴松)</a></p>
+      <p><a href="https://www.szu.edu.cn/">Shenzhen University</a> <a href="https://sch.szu.edu.cn/">South China Hospital</a>, Institute of Medical Artificial Intelligence, Team lead of the AI and bioinformatics group</p>
     </div>
   </article>
 
@@ -74,8 +86,8 @@ My research lies at the intersection of bioinformatics, complex systems, and med
       </span>
     </div>
     <div class="education-content">
-      <span class="education-period">2023~2026.07</span>
-      <p><a href="https://research.genomics.cn/">BGI Hangzhou Research</a>, Joint Doctoral Research with UCAS HIAS, Supervisors: Prof. <a href="https://scholar.google.com/citations?user=Uoqv8rkAAAAJ&amp;hl=zh-CN&amp;oi=ao">Luonan Chen (陈洛南)</a> and Prof. <a href="https://scholar.google.com/citations?user=xb2Vc8MAAAAJ&amp;hl=zh-CN&amp;oi=ao">Xun Xu (徐讯)</a></p>
+      <span class="education-period">2023.09~2026.07</span>
+      <p><a href="https://research.genomics.cn/">BGI Hangzhou Research</a>, Brain Science Research Center, Team lead of the research project on the neural origins of basal metazoans</p>
     </div>
   </article>
 </div>
