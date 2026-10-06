@@ -22,7 +22,8 @@ nav_order: 1
       <h2 id="publication-overview-title">Publications by Year</h2>
     </div>
     <div class="publication-overview__summary" aria-label="{{ publication_stats.total }} total research outputs">
-      <span><strong>{{ publication_stats.paper_total }}</strong>Papers</span>
+      <span><strong>{{ publication_stats.journal_article_total }}</strong>Journal Articles</span>
+      <span><strong>{{ publication_stats.conference_paper_total }}</strong>Conference Papers</span>
       <span><strong>{{ publication_stats.patent_total }}</strong>Patents</span>
       <span><strong>{{ publication_stats.total }}</strong>Total</span>
     </div>
@@ -32,7 +33,7 @@ nav_order: 1
     id="publication-year-chart"
     class="publication-overview__chart"
     role="img"
-    aria-label="Stacked horizontal bar chart of papers and patents by year"
+    aria-label="Stacked horizontal bar chart of journal articles, conference papers, and patents by year"
   ></div>
 
   <noscript>
@@ -89,7 +90,7 @@ nav_order: 1
 
   .publication-overview__summary {
     display: grid;
-    grid-template-columns: repeat(3, minmax(58px, 1fr));
+    grid-template-columns: repeat(4, minmax(58px, 1fr));
     overflow: hidden;
     flex: 0 0 auto;
     border: 1px solid var(--global-divider-color);
@@ -143,7 +144,7 @@ nav_order: 1
     }
 
     .publication-overview__summary {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       width: 100%;
     }
 
@@ -163,7 +164,8 @@ nav_order: 1
     const chart = echarts.init(chartElement);
     const publicationStats = {{ publication_stats | jsonify }};
     const years = publicationStats.years;
-    const papers = publicationStats.papers;
+    const journalArticles = publicationStats.journal_articles;
+    const conferencePapers = publicationStats.conference_papers;
     const patents = publicationStats.patents;
 
     const cssColor = (name, fallback) =>
@@ -179,7 +181,7 @@ nav_order: 1
           animationDuration: 650,
           aria: {
             enabled: true,
-            description: `${publicationStats.paper_total} papers and ${publicationStats.patent_total} patents by year.`
+            description: `${publicationStats.journal_article_total} journal articles, ${publicationStats.conference_paper_total} conference papers, and ${publicationStats.patent_total} patents by year.`
           },
           tooltip: {
             trigger: 'axis',
@@ -228,7 +230,7 @@ nav_order: 1
           },
           series: [
             {
-              name: 'Papers',
+              name: 'Journal Articles',
               type: 'bar',
               stack: 'total',
               barWidth: 22,
@@ -241,7 +243,23 @@ nav_order: 1
                 fontWeight: 700,
                 formatter: ({ value }) => (value ? value : '')
               },
-              data: papers
+              data: journalArticles
+            },
+            {
+              name: 'Conference Papers',
+              type: 'bar',
+              stack: 'total',
+              barWidth: 22,
+              emphasis: { focus: 'series' },
+              itemStyle: { color: '#7257b5', borderRadius: 4 },
+              label: {
+                show: true,
+                position: 'inside',
+                color: '#ffffff',
+                fontWeight: 700,
+                formatter: ({ value }) => (value ? value : '')
+              },
+              data: conferencePapers
             },
             {
               name: 'Patents',
