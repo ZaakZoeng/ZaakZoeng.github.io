@@ -22,7 +22,7 @@ My research lies at the intersection of bioinformatics, complex systems, and med
 
 
 {% if page.social %}
-<div class="social" style="clear: both;">
+<div class="social" style="clear: both; margin-bottom: 1.5rem;">
   <div class="contact-icons">{% include social.liquid %}</div>
   <div class="contact-note">{{ site.contact_note }}</div>
 </div>
