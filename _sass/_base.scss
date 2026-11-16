@@ -733,6 +733,16 @@ footer.sticky-bottom {
         }
       }
 
+      .periodical .journal-highlight {
+        background-color: var(--global-theme-color);
+        color: var(--global-bg-color);
+        padding: 0.1em 0.4em;
+        border-radius: 4px;
+        font-weight: 600;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+      }
+
       .links {
         a.btn {
           color: var(--global-text-color);

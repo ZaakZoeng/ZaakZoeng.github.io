@@ -163,7 +163,7 @@ My research lies at the intersection of bioinformatics, complex systems, and med
 
   .research-visual-card::before {
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     inset: 0 0 auto;
     height: 3px;
     content: "";
